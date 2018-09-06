@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsAppUI", "ContactsAppUI\ContactsAppUI.csproj", "{89A47C0A-499B-4A0F-B01F-6DAD942F635A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactsApp", "ContactsApp\ContactsApp.csproj", "{EA43F142-31A2-4266-BC3C-6FD486529E8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89A47C0A-499B-4A0F-B01F-6DAD942F635A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A47C0A-499B-4A0F-B01F-6DAD942F635A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A47C0A-499B-4A0F-B01F-6DAD942F635A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A47C0A-499B-4A0F-B01F-6DAD942F635A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA43F142-31A2-4266-BC3C-6FD486529E8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA43F142-31A2-4266-BC3C-6FD486529E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA43F142-31A2-4266-BC3C-6FD486529E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA43F142-31A2-4266-BC3C-6FD486529E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91930D11-2ECC-4204-8E21-1B1A53304A29}
+	EndGlobalSection
+EndGlobal
