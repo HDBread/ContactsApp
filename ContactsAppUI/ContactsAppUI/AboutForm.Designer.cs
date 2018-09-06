@@ -133,6 +133,7 @@
             this.Controls.Add(this.AutorLabel);
             this.Controls.Add(this.VersionLabel);
             this.Controls.Add(this.ContactsLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AboutForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;

@@ -23,5 +23,16 @@ namespace ContactsAppUI
             Form About = new AboutForm();
             About.ShowDialog();
         }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void createContactToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form AddContact = new Add_EditContactForm();
+            AddContact.ShowDialog();
+        }
     }
 }
