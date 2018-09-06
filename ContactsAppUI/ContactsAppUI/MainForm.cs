@@ -17,5 +17,11 @@ namespace ContactsAppUI
         {
             InitializeComponent();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form About = new AboutForm();
+            About.ShowDialog();
+        }
     }
 }
