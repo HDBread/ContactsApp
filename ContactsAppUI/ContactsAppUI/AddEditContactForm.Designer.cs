@@ -1,6 +1,6 @@
 ﻿namespace ContactsApp
 {
-    partial class Add_EditContactForm
+    partial class AddEditContactForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@
             this.BirthdayLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.PhoneLabel = new System.Windows.Forms.Label();
-            this.SubnameTextbox = new System.Windows.Forms.TextBox();
+            this.SurnameTextbox = new System.Windows.Forms.TextBox();
             this.NameTextbox = new System.Windows.Forms.TextBox();
             this.PhoneTextbox = new System.Windows.Forms.TextBox();
             this.EmailTextbox = new System.Windows.Forms.TextBox();
@@ -50,9 +50,9 @@
             this.SubnameLabebl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SubnameLabebl.Location = new System.Drawing.Point(35, 36);
             this.SubnameLabebl.Name = "SubnameLabebl";
-            this.SubnameLabebl.Size = new System.Drawing.Size(69, 16);
+            this.SubnameLabebl.Size = new System.Drawing.Size(65, 16);
             this.SubnameLabebl.TabIndex = 0;
-            this.SubnameLabebl.Text = "Subname:";
+            this.SubnameLabebl.Text = "Surname:";
             // 
             // BirthdayLabel
             // 
@@ -84,20 +84,20 @@
             this.PhoneLabel.TabIndex = 0;
             this.PhoneLabel.Text = "Phone:";
             // 
-            // SubnameTextbox
+            // SurnameTextbox
             // 
-            this.SubnameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SubnameTextbox.Location = new System.Drawing.Point(110, 33);
-            this.SubnameTextbox.Name = "SubnameTextbox";
-            this.SubnameTextbox.Size = new System.Drawing.Size(406, 22);
-            this.SubnameTextbox.TabIndex = 1;
+            this.SurnameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SurnameTextbox.Location = new System.Drawing.Point(110, 33);
+            this.SurnameTextbox.Name = "SurnameTextbox";
+            this.SurnameTextbox.Size = new System.Drawing.Size(462, 22);
+            this.SurnameTextbox.TabIndex = 1;
             // 
             // NameTextbox
             // 
             this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameTextbox.Location = new System.Drawing.Point(110, 61);
             this.NameTextbox.Name = "NameTextbox";
-            this.NameTextbox.Size = new System.Drawing.Size(406, 22);
+            this.NameTextbox.Size = new System.Drawing.Size(462, 22);
             this.NameTextbox.TabIndex = 1;
             // 
             // PhoneTextbox
@@ -105,7 +105,7 @@
             this.PhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhoneTextbox.Location = new System.Drawing.Point(110, 117);
             this.PhoneTextbox.Name = "PhoneTextbox";
-            this.PhoneTextbox.Size = new System.Drawing.Size(406, 22);
+            this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
             this.PhoneTextbox.TabIndex = 1;
             // 
             // EmailTextbox
@@ -113,7 +113,7 @@
             this.EmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailTextbox.Location = new System.Drawing.Point(110, 145);
             this.EmailTextbox.Name = "EmailTextbox";
-            this.EmailTextbox.Size = new System.Drawing.Size(406, 22);
+            this.EmailTextbox.Size = new System.Drawing.Size(462, 22);
             this.EmailTextbox.TabIndex = 1;
             // 
             // VkTextbox
@@ -121,7 +121,7 @@
             this.VkTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.VkTextbox.Location = new System.Drawing.Point(110, 173);
             this.VkTextbox.Name = "VkTextbox";
-            this.VkTextbox.Size = new System.Drawing.Size(406, 22);
+            this.VkTextbox.Size = new System.Drawing.Size(462, 22);
             this.VkTextbox.TabIndex = 1;
             // 
             // EmailLabel
@@ -149,7 +149,7 @@
             this.BirthdayDayTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthdayDayTool.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthdayDayTool.Location = new System.Drawing.Point(110, 89);
-            this.BirthdayDayTool.MaxDate = new System.DateTime(2018, 9, 6, 0, 0, 0, 0);
+            this.BirthdayDayTool.MaxDate = new System.DateTime(2018, 9, 10, 0, 0, 0, 0);
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
             this.BirthdayDayTool.Size = new System.Drawing.Size(105, 22);
@@ -176,8 +176,9 @@
             this.OKButton.TabIndex = 3;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // Add_EditContactForm
+            // AddEditContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +190,7 @@
             this.Controls.Add(this.EmailTextbox);
             this.Controls.Add(this.PhoneTextbox);
             this.Controls.Add(this.NameTextbox);
-            this.Controls.Add(this.SubnameTextbox);
+            this.Controls.Add(this.SurnameTextbox);
             this.Controls.Add(this.VkLabel);
             this.Controls.Add(this.EmailLabel);
             this.Controls.Add(this.PhoneLabel);
@@ -197,7 +198,7 @@
             this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.SubnameLabebl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Name = "Add_EditContactForm";
+            this.Name = "AddEditContactForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "Add/Edit Contact";
@@ -212,7 +213,7 @@
         private System.Windows.Forms.Label BirthdayLabel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label PhoneLabel;
-        private System.Windows.Forms.TextBox SubnameTextbox;
+        private System.Windows.Forms.TextBox SurnameTextbox;
         private System.Windows.Forms.TextBox NameTextbox;
         private System.Windows.Forms.TextBox PhoneTextbox;
         private System.Windows.Forms.TextBox EmailTextbox;

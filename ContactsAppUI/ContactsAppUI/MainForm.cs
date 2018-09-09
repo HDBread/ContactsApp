@@ -13,11 +13,16 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
+        private bool _isProjectChanged = false;
+
+        private List<Contacts> _contact = new List<Contacts>();
+        
         public MainForm()
         {
             InitializeComponent();
+           
         }
-
+        
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form About = new AboutForm();
@@ -31,8 +36,40 @@ namespace ContactsAppUI
 
         private void createContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form AddContact = new Add_EditContactForm();
-            AddContact.ShowDialog();
+            AddEditContactForm addContact = new AddEditContactForm();
+            if (addContact.ShowDialog() == DialogResult.OK)
+            {
+                _contact.Add(addContact.GetContact());
+            }
+            FillListView(_contact);
+            _isProjectChanged = true;
         }
+
+
+
+        /// <summary>
+        /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
+        /// то список будет очищен и снова заполнен.
+        /// </summary>
+        /// <param name="_contacts">Список контактов</param>
+        public void FillListView(List<Contacts> _contact)
+        {
+            if (ContactsList.Items.Count > 0) ContactsList.Items.Clear();
+            foreach (Contacts contact in _contact)
+            {
+                AddNewClient(contact);
+            }
+        }
+
+        /// <summary>
+        /// Добавить нового контакта
+        /// </summary>
+        /// <param name="contact">Контакт</param>
+        public void AddNewClient(Contacts contact)
+        {
+            int index = ContactsList.Items.Add(contact.Surname).Index;
+            ContactsList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
+        }
+
     }
 }

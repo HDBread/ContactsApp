@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ContactsApp
 {
-    public class Class1
+    class PhoneNumber
     {
+        
     }
 }

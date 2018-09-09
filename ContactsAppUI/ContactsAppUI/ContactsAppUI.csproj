@@ -52,11 +52,11 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Add_EditContactForm.cs">
+    <Compile Include="AddEditContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add_EditContactForm.Designer.cs">
-      <DependentUpon>Add_EditContactForm.cs</DependentUpon>
+    <Compile Include="AddEditContactForm.Designer.cs">
+      <DependentUpon>AddEditContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Add_EditContactForm.resx">
-      <DependentUpon>Add_EditContactForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddEditContactForm.resx">
+      <DependentUpon>AddEditContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -103,6 +103,21 @@
       <Project>{ea43f142-31a2-4266-bc3c-6fd486529e8a}</Project>
       <Name>ContactsApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adduser_añadir_3553.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addIcon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
