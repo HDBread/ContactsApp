@@ -25,12 +25,7 @@ namespace ContactsApp
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            if (SurnameTextbox.Text == "")
-            {
-                MessageBox.Show(" Field 'Surname' can't be empty ", "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
+            if (IsValueCheck() == true)
             {
                 DialogResult = DialogResult.OK;
                 Close();
@@ -47,6 +42,17 @@ namespace ContactsApp
                 DateOfBirhday = BirthdayDayTool.Value
             };
 
+        }
+
+        public bool IsValueCheck()
+        {
+            if (SurnameTextbox.Text == "" | NameTextbox.Text == "" | VkTextbox.Text == "" | EmailTextbox.Text == "" | PhoneTextbox.Text == "")
+            {
+                MessageBox.Show(" Field(s) can't be empty ", "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }
