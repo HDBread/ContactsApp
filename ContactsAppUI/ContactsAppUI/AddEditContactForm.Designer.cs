@@ -107,6 +107,7 @@
             this.PhoneTextbox.Name = "PhoneTextbox";
             this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
             this.PhoneTextbox.TabIndex = 1;
+            this.PhoneTextbox.WordWrap = false;
             // 
             // EmailTextbox
             // 
@@ -140,16 +141,16 @@
             this.VkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.VkLabel.Location = new System.Drawing.Point(50, 176);
             this.VkLabel.Name = "VkLabel";
-            this.VkLabel.Size = new System.Drawing.Size(54, 16);
+            this.VkLabel.Size = new System.Drawing.Size(56, 16);
             this.VkLabel.TabIndex = 0;
-            this.VkLabel.Text = "vk.com:";
+            this.VkLabel.Text = "Vk.com:";
             // 
             // BirthdayDayTool
             // 
             this.BirthdayDayTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthdayDayTool.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthdayDayTool.Location = new System.Drawing.Point(110, 89);
-            this.BirthdayDayTool.MaxDate = new System.DateTime(2018, 9, 10, 0, 0, 0, 0);
+            this.BirthdayDayTool.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
             this.BirthdayDayTool.Size = new System.Drawing.Size(105, 22);

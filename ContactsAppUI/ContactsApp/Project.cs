@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ContactsApp
 {
-    [Serializable]
     public class Project
     {
-       
+        
     }
 }

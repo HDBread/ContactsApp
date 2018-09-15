@@ -16,7 +16,7 @@ namespace ContactsAppUI
         private bool _isProjectChanged = false;
 
         private List<Contacts> _contact = new List<Contacts>();
-        
+
         public MainForm()
         {
             InitializeComponent();
@@ -71,5 +71,22 @@ namespace ContactsAppUI
             ContactsList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
         }
 
+        private void ContactsList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ContactsList.SelectedIndices.Count != 0)
+            {
+                SurnameTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Surname;
+                NameTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Name;
+                BirthdayDayTool.Value = _contact[ContactsList.SelectedIndices[0]].DateOfBirhday;
+                PhoneTextbox.Text = Convert.ToString(_contact[ContactsList.SelectedIndices[0]].PhoneNumber);
+                EmailTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Email;
+                VkTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Vk;
+            }
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
