@@ -8,22 +8,6 @@ namespace ContactsApp
 {
     public class Contacts
     {
-        private string _name;
-        public string Name
-        {
-            get => _name;
-            set
-            {
-                if (value.Length > 50)
-                {
-                    throw new ArgumentException("Длинна имени должно быть меньше 50, а был " + value.Length);
-                }
-                else
-                    _name = value;
-            }
-
-        }
-
         private string _surname;
         public string Surname
         {
@@ -34,9 +18,33 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Длинна фамилии должна быть меньше 50, а был " + value.Length);
                 }
+                else if (value == string.Empty)
+                {
+                    throw new NotFiniteNumberException();
+                }
                 else
                     _surname = value;
             }
+        }
+
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (value.Length > 50)
+                {
+                    throw new ArgumentException("Длинна имени должно быть меньше 50, а был " + value.Length);
+                }
+                else if (value == string.Empty)
+                {
+                    throw new NotFiniteNumberException();
+                }
+                else
+                    _name = value;
+            }
+
         }
 
         private int _phoneNumber;
@@ -49,11 +57,15 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Длинна фамилии должна быть меньше 11, а был " + value.ToString().Length);
                 }
+                else if (value.ToString() == string.Empty)
+                {
+                    throw new NotFiniteNumberException();
+                }
                 /*else if (value.ToString()[0] != 7)
                 {
                     throw new ArgumentException("Номер телефона должен начинаться с 7, а начинается с " + value.ToString()[0]);
                 }*/
-                    _phoneNumber = value;
+                _phoneNumber = value;
             }
         }
 
@@ -82,6 +94,10 @@ namespace ContactsApp
                 {
                     throw new ArgumentException("Длинна Email'а должна быть меньше 50, а был " + value.Length);
                 }
+                else if (value == string.Empty)
+                {
+                    throw new NotFiniteNumberException();
+                }
                 else
                     _email = value;
             }
@@ -96,6 +112,10 @@ namespace ContactsApp
                 if (value.Length > 15)
                 {
                     throw new ArgumentException("Длинна id vk должна быть меньше 15, а был " + value.Length);
+                }
+                else if (value == string.Empty)
+                {
+                   throw new NotFiniteNumberException();
                 }
                 else
                     _vk = value;
