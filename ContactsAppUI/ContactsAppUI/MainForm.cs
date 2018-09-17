@@ -109,9 +109,15 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            int index = ContactsList.SelectedIndices[0];
-            _contact.RemoveAt(index);
-            ContactsList.Items[index].Remove();
+          DialogResult _dialogResult = MessageBox.Show("Are you sure you want to delete the contact?", "Remove Contact",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (_dialogResult == DialogResult.Yes)
+            {
+                int index = ContactsList.SelectedIndices[0];
+                _contact.RemoveAt(index);
+                ContactsList.Items[index].Remove();
+                _isProjectChanged = true;
+            }
         }
     }
 }

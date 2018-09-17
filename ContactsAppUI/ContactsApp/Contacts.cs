@@ -83,7 +83,7 @@ namespace ContactsApp
                     throw new ArgumentException("Длинна Email'а должна быть меньше 50, а был " + value.Length);
                 }
                 else
-                    _surname = value;
+                    _email = value;
             }
         }
 
@@ -98,7 +98,7 @@ namespace ContactsApp
                     throw new ArgumentException("Длинна id vk должна быть меньше 15, а был " + value.Length);
                 }
                 else
-                    _surname = value;
+                    _vk = value;
             }
         }
     }
