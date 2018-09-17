@@ -100,6 +100,15 @@ namespace ContactsAppUI
                 EmailTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Email;
                 VkTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Vk;
             }
+            else
+            {
+                SurnameTextbox.Text = string.Empty;
+                NameTextbox.Text = string.Empty;
+                BirthdayDayTool.Value = new DateTime(2000,01,01);
+                PhoneTextbox.Text = string.Empty;
+                EmailTextbox.Text = string.Empty;
+                VkTextbox.Text = string.Empty;
+            }
         }
 
         /// <summary>

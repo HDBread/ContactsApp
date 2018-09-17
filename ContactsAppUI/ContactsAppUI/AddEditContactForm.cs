@@ -81,7 +81,7 @@ namespace ContactsApp
                 return false;
             }
 
-            //TryCatch Surname
+            //TryCatch Birthday
             try
             {
                 _contacts.DateOfBirhday = BirthdayDayTool.Value;
@@ -89,7 +89,7 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Выставленная дата не должна быть больше " + DateTime.Today.Date, "Add Contact Error",
+                MessageBox.Show(" Выставленная дата не должна быть больше " + DateTime.Today.ToShortDateString(), "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 BirthdayDayTool.Focus();
                 return false;
