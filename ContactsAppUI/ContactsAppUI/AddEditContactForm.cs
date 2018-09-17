@@ -31,7 +31,6 @@ namespace ContactsApp
                 DialogResult = DialogResult.OK;
                 this.Close();
             }
-            
         }
 
         /// <summary>
@@ -169,6 +168,5 @@ namespace ContactsApp
 
             return true;
         }
-        
     }
 }
