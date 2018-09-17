@@ -109,7 +109,9 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-            
+            int index = ContactsList.SelectedIndices[0];
+            _contact.RemoveAt(index);
+            ContactsList.Items[index].Remove();
         }
     }
 }
