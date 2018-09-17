@@ -23,6 +23,11 @@ namespace ContactsApp
             this.Close();
         }
 
+        /// <summary>
+        /// Кнопка ОК. Выполняется проверка на не пустые поля 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OKButton_Click(object sender, EventArgs e)
         {
             var _check = new CheckValue();
@@ -72,6 +77,10 @@ namespace ContactsApp
             
         }
 
+        /// <summary>
+        /// Метод получения контакта в виде элемента списка
+        /// </summary>
+        /// <returns>Возвращает контакт с заполнеными полями</returns>
         public Contacts GetContact()
         {
             return new Contacts()

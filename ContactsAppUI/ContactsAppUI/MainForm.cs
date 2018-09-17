@@ -23,17 +23,32 @@ namespace ContactsAppUI
            
         }
         
+        /// <summary>
+        /// Открыть окно About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form About = new AboutForm();
             About.ShowDialog();
         }
 
+        /// <summary>
+        /// Кнопка выхода из программы
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        /// <summary>
+        /// Кнопка создания нового контакта. Вводимые поля не должны быть пустыми.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void createContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddEditContactForm addContact = new AddEditContactForm();
@@ -44,9 +59,7 @@ namespace ContactsAppUI
             FillListView(_contact);
             _isProjectChanged = true;
         }
-
-
-
+        
         /// <summary>
         /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
         /// то список будет очищен и снова заполнен.
@@ -71,6 +84,11 @@ namespace ContactsAppUI
             ContactsList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
         }
 
+        /// <summary>
+        /// Вывод выбранного контакта для просмотра
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ContactsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ContactsList.SelectedIndices.Count != 0)
@@ -84,6 +102,11 @@ namespace ContactsAppUI
             }
         }
 
+        /// <summary>
+        /// Кнопка удаления выбранного контакта
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             
