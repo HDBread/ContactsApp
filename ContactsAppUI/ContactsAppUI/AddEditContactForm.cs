@@ -46,14 +46,14 @@ namespace ContactsApp
                 _contacts.Surname = SurnameTextbox.Text;
 
             }
-            catch (ArgumentException e)
+            catch (ArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SurnameTextbox.Focus();
                 return false;
             }
-            catch (FieldAccessException e)
+            catch (ArgumentException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -67,14 +67,14 @@ namespace ContactsApp
                 _contacts.Name = NameTextbox.Text;
 
             }
-            catch (ArgumentException e)
+            catch (ArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NameTextbox.Focus();
                 return false;
             }
-            catch (FieldAccessException e)
+            catch (ArgumentException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -102,14 +102,14 @@ namespace ContactsApp
                 _contacts.PhoneNumber = Convert.ToInt64(PhoneTextbox.Text);
 
             }
-            catch (ArgumentException e)
+            catch (ArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PhoneTextbox.Focus();
                 return false;
             }
-            catch (FieldAccessException e)
+            catch (ArgumentException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,14 +130,14 @@ namespace ContactsApp
                 _contacts.Email = EmailTextbox.Text;
 
             }
-            catch (ArgumentException e)
+            catch (ArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EmailTextbox.Focus();
                 return false;
             }
-            catch (FieldAccessException e)
+            catch (ArgumentExceptionArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -151,14 +151,14 @@ namespace ContactsApp
                 _contacts.Vk = VkTextbox.Text;
 
             }
-            catch (ArgumentException e)
+            catch (ArgumentNullException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 VkTextbox.Focus();
                 return false;
             }
-            catch (FieldAccessException e)
+            catch (ArgumentException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);

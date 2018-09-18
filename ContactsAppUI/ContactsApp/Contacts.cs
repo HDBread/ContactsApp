@@ -10,13 +10,14 @@ namespace ContactsApp
             get => _surname;
             set
             {
-                if (value.Length > 50)
+                
+                if (value == string.Empty)
+                {
+                    throw new ArgumentNullException("Field 'Surname' can't be empty");
+                }
+                else if (value.Length > 50)
                 {
                     throw new ArgumentException("Длина фамилии должна быть меньше 50, а был " + value.Length);
-                }
-                else if (value == string.Empty)
-                {
-                    throw new FieldAccessException("Field 'Surname' can't be empty");
                 }
                 else
                     _surname = value;
@@ -29,13 +30,14 @@ namespace ContactsApp
             get => _name;
             set
             {
-                if (value.Length > 50)
+                
+                if (value == string.Empty)
+                {
+                    throw new ArgumentNullException("Field 'Name' can't be empty");
+                }
+                else if (value.Length > 50)
                 {
                     throw new ArgumentException("Длина имени должно быть меньше 50, а был " + value.Length);
-                }
-                else if (value == string.Empty)
-                {
-                    throw new FieldAccessException("Field 'Name' can't be empty");
                 }
                 else
                     _name = value;
@@ -49,13 +51,14 @@ namespace ContactsApp
             get => _phoneNumber;
             set
             {
-                if (value.ToString().Length > 11)
+                
+                if (value.ToString() == string.Empty)
+                {
+                    throw new ArgumentNullException("Field 'PhoneNumber' can't be empty");
+                }
+                else if (value.ToString().Length > 11)
                 {
                     throw new ArgumentException("Длина фамилии должна быть меньше 11, а был " + value.ToString().Length);
-                }
-                else if (value.ToString() == string.Empty)
-                {
-                    throw new FieldAccessException("Field 'PhoneNumber' can't be empty");
                 }
                 else if (value.ToString()[0] != '7')
                 {
@@ -86,13 +89,14 @@ namespace ContactsApp
             get => _email;
             set
             {
-                if (value.Length > 50)
+                
+                if (value == string.Empty)
+                {
+                    throw new ArgumentNullException("Field 'Email' can't be empty");
+                }
+                else if (value.Length > 50)
                 {
                     throw new ArgumentException("Длинна Email'а должна быть меньше 50, а был " + value.Length);
-                }
-                else if (value == string.Empty)
-                {
-                    throw new FieldAccessException("Field 'Email' can't be empty");
                 }
                 else
                     _email = value;
@@ -105,13 +109,14 @@ namespace ContactsApp
             get => _vk;
             set
             {
-                if (value.Length > 15)
+                
+                if (value == string.Empty)
+                {
+                   throw new ArgumentNullException("Field 'Vk' can't be empty");
+                }
+                else if (value.Length > 15)
                 {
                     throw new ArgumentException("Длинна id vk должна быть меньше 15, а был " + value.Length);
-                }
-                else if (value == string.Empty)
-                {
-                   throw new FieldAccessException("Field 'Vk' can't be empty");
                 }
                 else
                     _vk = value;
