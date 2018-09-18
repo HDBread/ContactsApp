@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactsApp;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace ContactsAppUI
 {
@@ -23,7 +25,8 @@ namespace ContactsAppUI
         public MainForm()
         {
             InitializeComponent();
-           
+            ProjectManager projectManager = new ProjectManager();
+            _project = projectManager.LoadFile(_project);
         }
         
         /// <summary>
@@ -130,6 +133,12 @@ namespace ContactsAppUI
                 ContactsList.Items[index].Remove();
                 _isProjectChanged = true;
             }
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            ProjectManager projectManager = new ProjectManager();
+            projectManager.SaveFile(_project);
         }
     }
 }
