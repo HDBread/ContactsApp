@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ContactsAppUI;
 
 namespace ContactsApp
 {
@@ -47,14 +48,14 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Кол-во введеных символов в поле Surname не должно привышать 50-ти ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SurnameTextbox.Focus();
                 return false;
             }
-            catch (NotFiniteNumberException)
+            catch (FieldAccessException e)
             {
-                MessageBox.Show(" Field 'Surname' can't be empty ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SurnameTextbox.Focus();
                 return false;
@@ -68,14 +69,14 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Кол-во введеных символов в поле Name не должно привышать 50-ти ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NameTextbox.Focus();
                 return false;
             }
-            catch (NotFiniteNumberException)
+            catch (FieldAccessException e)
             {
-                MessageBox.Show(" Field 'Name' can't be empty ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 NameTextbox.Focus();
                 return false;
@@ -89,7 +90,7 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Выставленная дата не должна быть больше " + DateTime.Today.ToShortDateString(), "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 BirthdayDayTool.Focus();
                 return false;
@@ -98,27 +99,26 @@ namespace ContactsApp
             //TryCatch PhoneNumber
             try
             {
-                _contacts.PhoneNumber = Convert.ToInt32(PhoneTextbox.Text);
+                _contacts.PhoneNumber = Convert.ToInt64(PhoneTextbox.Text);
 
             }
-            catch (ArgumentException)
+            catch (ArgumentException e)
             {
-                MessageBox.Show(" Кол-во введеных символов в поле PhoneNumber не должно привышать 11-ти ",
-                    "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PhoneTextbox.Focus();
                 return false;
             }
-            catch (NotFiniteNumberException)
+            catch (FieldAccessException e)
             {
-                MessageBox.Show(" Field 'PhoneNumber' can't be empty ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PhoneTextbox.Focus();
                 return false;
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
-                MessageBox.Show(" Входная строка имела не верный формат ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 PhoneTextbox.Focus();
                 return false;
@@ -132,14 +132,14 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Кол-во введеных символов в поле Email не должно привышать 50-ти ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EmailTextbox.Focus();
                 return false;
             }
-            catch (NotFiniteNumberException)
+            catch (FieldAccessException e)
             {
-                MessageBox.Show(" Field 'Email' can't be empty ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 EmailTextbox.Focus();
                 return false;
@@ -153,14 +153,14 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                MessageBox.Show(" Кол-во введеных символов в поле VK не должно привышать 15-ти ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 VkTextbox.Focus();
                 return false;
             }
-            catch (NotFiniteNumberException)
+            catch (FieldAccessException e)
             {
-                MessageBox.Show(" Field 'VK' can't be empty ", "Add Contact Error",
+                MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 VkTextbox.Focus();
                 return false;

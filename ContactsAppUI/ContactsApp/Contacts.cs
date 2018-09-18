@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactsApp
 {
@@ -16,11 +12,11 @@ namespace ContactsApp
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException("Длинна фамилии должна быть меньше 50, а был " + value.Length);
+                    throw new ArgumentException("Длина фамилии должна быть меньше 50, а был " + value.Length);
                 }
                 else if (value == string.Empty)
                 {
-                    throw new NotFiniteNumberException();
+                    throw new FieldAccessException("Field 'Surname' can't be empty");
                 }
                 else
                     _surname = value;
@@ -35,11 +31,11 @@ namespace ContactsApp
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException("Длинна имени должно быть меньше 50, а был " + value.Length);
+                    throw new ArgumentException("Длина имени должно быть меньше 50, а был " + value.Length);
                 }
                 else if (value == string.Empty)
                 {
-                    throw new NotFiniteNumberException();
+                    throw new FieldAccessException("Field 'Name' can't be empty");
                 }
                 else
                     _name = value;
@@ -47,24 +43,24 @@ namespace ContactsApp
 
         }
 
-        private int _phoneNumber;
-        public int PhoneNumber
+        private long _phoneNumber;
+        public long PhoneNumber
         {
             get => _phoneNumber;
             set
             {
                 if (value.ToString().Length > 11)
                 {
-                    throw new ArgumentException("Длинна фамилии должна быть меньше 11, а был " + value.ToString().Length);
+                    throw new ArgumentException("Длина фамилии должна быть меньше 11, а был " + value.ToString().Length);
                 }
                 else if (value.ToString() == string.Empty)
                 {
-                    throw new NotFiniteNumberException();
+                    throw new FieldAccessException("Field 'PhoneNumber' can't be empty");
                 }
-                /*else if (value.ToString()[0] != 7)
+                else if (value.ToString()[0] != '7')
                 {
-                    throw new ArgumentException("Номер телефона должен начинаться с 7, а начинается с " + value.ToString()[0]);
-                }*/
+                    throw new FormatException("Номер телефона должен начинаться с 7, а начинается с " + value.ToString()[0]);
+                }
                 _phoneNumber = value;
             }
         }
@@ -77,7 +73,7 @@ namespace ContactsApp
             {
                 if (value > DateTime.Today)
                 {
-                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Today + ", а был " + value);
+                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Today.ToShortDateString() + ", а был " + value.Date.ToShortDateString());
                 }
                 else
                     _date = value;
@@ -96,7 +92,7 @@ namespace ContactsApp
                 }
                 else if (value == string.Empty)
                 {
-                    throw new NotFiniteNumberException();
+                    throw new FieldAccessException("Field 'Email' can't be empty");
                 }
                 else
                     _email = value;
@@ -115,7 +111,7 @@ namespace ContactsApp
                 }
                 else if (value == string.Empty)
                 {
-                   throw new NotFiniteNumberException();
+                   throw new FieldAccessException("Field 'Vk' can't be empty");
                 }
                 else
                     _vk = value;

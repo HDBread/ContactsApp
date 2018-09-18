@@ -8,6 +8,6 @@ namespace ContactsApp
 {
     public class Project
     {
-        
+        public List<Contacts> Contacts = new List<Contacts>();
     }
 }

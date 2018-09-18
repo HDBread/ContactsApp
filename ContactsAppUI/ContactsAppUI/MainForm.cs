@@ -15,7 +15,10 @@ namespace ContactsAppUI
     {
         private bool _isProjectChanged = false;
 
-        private List<Contacts> _contact = new List<Contacts>();
+        /// <summary>
+        /// Объявление нового экземпляра списка
+        /// </summary>
+        private Project _project = new Project();
 
         public MainForm()
         {
@@ -54,9 +57,9 @@ namespace ContactsAppUI
             AddEditContactForm addContact = new AddEditContactForm();
             if (addContact.ShowDialog() == DialogResult.OK)
             {
-                _contact.Add(addContact.ContactsData);
+                _project.Contacts.Add(addContact.ContactsData);
             }
-            FillListView(_contact);
+            FillListView(_project.Contacts);
             _isProjectChanged = true;
         }
         
@@ -93,12 +96,12 @@ namespace ContactsAppUI
         {
             if (ContactsList.SelectedIndices.Count != 0)
             {
-                SurnameTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Surname;
-                NameTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Name;
-                BirthdayDayTool.Value = _contact[ContactsList.SelectedIndices[0]].DateOfBirhday;
-                PhoneTextbox.Text = Convert.ToString(_contact[ContactsList.SelectedIndices[0]].PhoneNumber);
-                EmailTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Email;
-                VkTextbox.Text = _contact[ContactsList.SelectedIndices[0]].Vk;
+                SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
+                NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
+                BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirhday;
+                PhoneTextbox.Text = Convert.ToString(_project.Contacts[ContactsList.SelectedIndices[0]].PhoneNumber);
+                EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
+                VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;
             }
             else
             {
@@ -123,7 +126,7 @@ namespace ContactsAppUI
             if (_dialogResult == DialogResult.Yes)
             {
                 int index = ContactsList.SelectedIndices[0];
-                _contact.RemoveAt(index);
+                _project.Contacts.RemoveAt(index);
                 ContactsList.Items[index].Remove();
                 _isProjectChanged = true;
             }

@@ -98,7 +98,7 @@
             this.NameTextbox.Location = new System.Drawing.Point(110, 61);
             this.NameTextbox.Name = "NameTextbox";
             this.NameTextbox.Size = new System.Drawing.Size(462, 22);
-            this.NameTextbox.TabIndex = 1;
+            this.NameTextbox.TabIndex = 2;
             // 
             // PhoneTextbox
             // 
@@ -106,7 +106,7 @@
             this.PhoneTextbox.Location = new System.Drawing.Point(110, 117);
             this.PhoneTextbox.Name = "PhoneTextbox";
             this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
-            this.PhoneTextbox.TabIndex = 1;
+            this.PhoneTextbox.TabIndex = 4;
             this.PhoneTextbox.WordWrap = false;
             // 
             // EmailTextbox
@@ -115,7 +115,7 @@
             this.EmailTextbox.Location = new System.Drawing.Point(110, 145);
             this.EmailTextbox.Name = "EmailTextbox";
             this.EmailTextbox.Size = new System.Drawing.Size(462, 22);
-            this.EmailTextbox.TabIndex = 1;
+            this.EmailTextbox.TabIndex = 5;
             // 
             // VkTextbox
             // 
@@ -123,7 +123,7 @@
             this.VkTextbox.Location = new System.Drawing.Point(110, 173);
             this.VkTextbox.Name = "VkTextbox";
             this.VkTextbox.Size = new System.Drawing.Size(462, 22);
-            this.VkTextbox.TabIndex = 1;
+            this.VkTextbox.TabIndex = 6;
             // 
             // EmailLabel
             // 
@@ -154,7 +154,7 @@
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
             this.BirthdayDayTool.Size = new System.Drawing.Size(105, 22);
-            this.BirthdayDayTool.TabIndex = 2;
+            this.BirthdayDayTool.TabIndex = 3;
             this.BirthdayDayTool.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             // 
             // CancelButton
@@ -163,7 +163,7 @@
             this.CancelButton.Location = new System.Drawing.Point(492, 219);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(80, 30);
-            this.CancelButton.TabIndex = 3;
+            this.CancelButton.TabIndex = 8;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -174,7 +174,7 @@
             this.OKButton.Location = new System.Drawing.Point(406, 219);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(80, 30);
-            this.OKButton.TabIndex = 3;
+            this.OKButton.TabIndex = 7;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
