@@ -137,7 +137,7 @@ namespace ContactsApp
                 EmailTextbox.Focus();
                 return false;
             }
-            catch (ArgumentExceptionArgumentNullException e)
+            catch (ArgumentException e)
             {
                 MessageBox.Show(e.Message, "Add Contact Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
