@@ -46,7 +46,25 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult;
+            if(_isProjectChanged != true)
+                this.Close();
+            else
+            {
+                dialogResult = MessageBox.Show("Имеются не сохраненные данные. Желаете сохранить их перед выходом?",
+                    "Save befor exit",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    safeAsToolStripMenuItem_Click(sender,e);
+                }
+                else
+                {
+                    this.Close();
+                }
+            }
         }
 
         /// <summary>
@@ -69,7 +87,7 @@ namespace ContactsAppUI
         /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
         /// то список будет очищен и снова заполнен.
         /// </summary>
-        /// <param name="_contacts">Список контактов</param>
+        /// <param name="_contact">Список контактов</param>
         public void FillListView(List<Contacts> _contact)
         {
             if (ContactsList.Items.Count > 0) ContactsList.Items.Clear();
