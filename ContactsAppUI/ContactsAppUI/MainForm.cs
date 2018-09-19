@@ -154,7 +154,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Метод изменения контакта
+        /// Метод изменения контакта. Контакт должен изменяться поштучно
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -162,9 +162,11 @@ namespace ContactsAppUI
         {
             int index = ContactsList.SelectedIndices[0];
             AddEditContactForm editContact = new AddEditContactForm();
-            RemoveButton_Click(sender,e);
+            editContact.ContactView(_project.Contacts[index]);
             if (editContact.ShowDialog() == DialogResult.OK)
             {
+                _project.Contacts.RemoveAt(index);
+                ContactsList.Items[index].Remove();
                 _project.Contacts.Insert(index,editContact.ContactData);
             }
             FillListView(_project.Contacts);

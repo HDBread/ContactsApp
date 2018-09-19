@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using ContactsAppUI;
 
 namespace ContactsApp
 {
@@ -14,6 +13,7 @@ namespace ContactsApp
         private Contacts _contact = new Contacts();
 
         public Contacts ContactData => _contact;
+
         
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -167,6 +167,16 @@ namespace ContactsApp
             }
 
             return true;
+        }
+
+        public void ContactView(Contacts contact)
+        {
+            SurnameTextbox.Text = contact.Surname;
+            NameTextbox.Text = contact.Name;
+            BirthdayDayTool.Value = contact.DateOfBirhday;
+            PhoneTextbox.Text = Convert.ToString(contact.PhoneNumber);
+            EmailTextbox.Text = contact.Email;
+            VkTextbox.Text = contact.Vk;
         }
     }
 }
