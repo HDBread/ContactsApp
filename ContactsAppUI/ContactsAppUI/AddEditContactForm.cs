@@ -11,9 +11,9 @@ namespace ContactsApp
             InitializeComponent();
         }
 
-        private Contacts _contacts = new Contacts();
+        private Contacts _contact = new Contacts();
 
-        public Contacts ContactsData => _contacts;
+        public Contacts ContactData => _contact;
         
         private void CancelButton_Click(object sender, EventArgs e)
         {
@@ -43,7 +43,7 @@ namespace ContactsApp
             //TryCatch Surname
             try
             {
-                _contacts.Surname = SurnameTextbox.Text;
+                _contact.Surname = SurnameTextbox.Text;
 
             }
             catch (ArgumentNullException e)
@@ -64,7 +64,7 @@ namespace ContactsApp
             //TryCatch Name
             try
             {
-                _contacts.Name = NameTextbox.Text;
+                _contact.Name = NameTextbox.Text;
 
             }
             catch (ArgumentNullException e)
@@ -85,7 +85,7 @@ namespace ContactsApp
             //TryCatch Birthday
             try
             {
-                _contacts.DateOfBirhday = BirthdayDayTool.Value;
+                _contact.DateOfBirhday = BirthdayDayTool.Value;
 
             }
             catch (ArgumentException e)
@@ -99,7 +99,7 @@ namespace ContactsApp
             //TryCatch PhoneNumber
             try
             {
-                _contacts.PhoneNumber = Convert.ToInt64(PhoneTextbox.Text);
+                _contact.PhoneNumber = Convert.ToInt64(PhoneTextbox.Text);
 
             }
             catch (ArgumentNullException e)
@@ -127,7 +127,7 @@ namespace ContactsApp
             //TryCatch Email
             try
             {
-                _contacts.Email = EmailTextbox.Text;
+                _contact.Email = EmailTextbox.Text;
 
             }
             catch (ArgumentNullException e)
@@ -148,7 +148,7 @@ namespace ContactsApp
             //TryCatch Vk
             try
             {
-                _contacts.Vk = VkTextbox.Text;
+                _contact.Vk = VkTextbox.Text;
 
             }
             catch (ArgumentNullException e)

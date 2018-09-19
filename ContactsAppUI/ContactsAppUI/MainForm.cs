@@ -59,7 +59,7 @@ namespace ContactsAppUI
             AddEditContactForm addContact = new AddEditContactForm();
             if (addContact.ShowDialog() == DialogResult.OK)
             {
-                _project.Contacts.Add(addContact.ContactsData);
+                _project.Contacts.Add(addContact.ContactData);
             }
             FillListView(_project.Contacts);
             _isProjectChanged = true;
