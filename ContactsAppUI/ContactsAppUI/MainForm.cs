@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactsApp;
 using System.IO;
+using System.Security.Policy;
 using Newtonsoft.Json;
 
 namespace ContactsAppUI
@@ -47,7 +48,7 @@ namespace ContactsAppUI
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult;
-            if(_isProjectChanged != true)
+            if(_isProjectChanged != true | ContactsList.Items.Count == 0)
                 this.Close();
             else
             {
@@ -68,7 +69,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Кнопка создания нового контакта. Вводимые поля не должны быть пустыми.
+        /// Метод создания нового контакта. Вводимые поля не должны быть пустыми.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -135,7 +136,7 @@ namespace ContactsAppUI
         }
 
         /// <summary>
-        /// Кнопка удаления выбранного контакта
+        /// Метод удаления выбранного контакта
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -152,17 +153,39 @@ namespace ContactsAppUI
             }
         }
 
+        /// <summary>
+        /// Метод изменения контакта
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EditButton_Click(object sender, EventArgs e)
         {
-            
+            int index = ContactsList.SelectedIndices[0];
+            AddEditContactForm editContact = new AddEditContactForm();
+            RemoveButton_Click(sender,e);
+            if (editContact.ShowDialog() == DialogResult.OK)
+            {
+                _project.Contacts.Insert(index,editContact.ContactData);
+            }
+            FillListView(_project.Contacts);
         }
 
+        /// <summary>
+        /// Диалог сохранени файла без выбора куда схоранять
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void safeFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProjectManager projectManager = new ProjectManager();
            // projectManager.SaveFile(_project);
         }
 
+        /// <summary>
+        /// Диалог сохранени файла с выбором куда схоранять
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void safeAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileAs = new SaveFileDialog();
@@ -174,6 +197,11 @@ namespace ContactsAppUI
 
         }
 
+        /// <summary>
+        /// Диалог открытия файла
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
