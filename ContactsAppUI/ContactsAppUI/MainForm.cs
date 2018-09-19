@@ -21,14 +21,13 @@ namespace ContactsAppUI
         /// Объявление нового экземпляра списка
         /// </summary>
         private Project _project = new Project();
+        private ProjectManager _projectManager = new ProjectManager();
 
         public MainForm()
         {
             InitializeComponent();
-            ProjectManager projectManager = new ProjectManager();
-            _project = projectManager.LoadFile(_project);
         }
-        
+
         /// <summary>
         /// Открыть окно About
         /// </summary>
@@ -137,8 +136,35 @@ namespace ContactsAppUI
 
         private void EditButton_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void safeFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             ProjectManager projectManager = new ProjectManager();
-            projectManager.SaveFile(_project);
+           // projectManager.SaveFile(_project);
+        }
+
+        private void safeAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileAs = new SaveFileDialog();
+            saveFileAs.Filter = "Только текстовые файлы (*.txt) | *.txt";
+            saveFileAs.ShowDialog();
+            string fileName = saveFileAs.FileName;
+            _projectManager.SaveFile(_project, fileName);
+            _isProjectChanged = false;
+
+        }
+
+        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.ShowDialog();
+            string fileName = openFile.FileName;
+            _project = _projectManager.LoadFile(_project, fileName);
+            FillListView(_project.Contacts);
+            _isProjectChanged = false;
+
         }
     }
 }

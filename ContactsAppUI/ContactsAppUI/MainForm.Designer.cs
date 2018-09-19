@@ -58,6 +58,11 @@
             this.BirthdayLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.SubnameLabebl = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.safeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.safeAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -80,7 +85,10 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.safeFileToolStripMenuItem,
+            this.safeAsToolStripMenuItem,
+            this.openFileToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -88,7 +96,8 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -371,6 +380,33 @@
             this.SubnameLabebl.TabIndex = 8;
             this.SubnameLabebl.Text = "Surname:";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // safeFileToolStripMenuItem
+            // 
+            this.safeFileToolStripMenuItem.Name = "safeFileToolStripMenuItem";
+            this.safeFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.safeFileToolStripMenuItem.Text = "Safe File";
+            this.safeFileToolStripMenuItem.Click += new System.EventHandler(this.safeFileToolStripMenuItem_Click);
+            // 
+            // safeAsToolStripMenuItem
+            // 
+            this.safeAsToolStripMenuItem.Name = "safeAsToolStripMenuItem";
+            this.safeAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.safeAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.safeAsToolStripMenuItem.Text = "Safe As";
+            this.safeAsToolStripMenuItem.Click += new System.EventHandler(this.safeAsToolStripMenuItem_Click);
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +462,11 @@
         private System.Windows.Forms.Button AddButton;
         private System.Windows.Forms.ListView ContactsList;
         private System.Windows.Forms.ColumnHeader ContactsCol;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem safeFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem safeAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
     }
 }
 
