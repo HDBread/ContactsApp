@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.safeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.safeAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,10 +64,6 @@
             this.SubnameLabebl = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.safeFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.safeAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -95,11 +95,39 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // safeFileToolStripMenuItem
+            // 
+            this.safeFileToolStripMenuItem.Name = "safeFileToolStripMenuItem";
+            this.safeFileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.safeFileToolStripMenuItem.Text = "Safe File";
+            this.safeFileToolStripMenuItem.Click += new System.EventHandler(this.safeFileToolStripMenuItem_Click);
+            // 
+            // safeAsToolStripMenuItem
+            // 
+            this.safeAsToolStripMenuItem.Name = "safeAsToolStripMenuItem";
+            this.safeAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.safeAsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.safeAsToolStripMenuItem.Text = "Safe As";
+            this.safeAsToolStripMenuItem.Click += new System.EventHandler(this.safeAsToolStripMenuItem_Click);
+            // 
+            // openFileToolStripMenuItem
+            // 
+            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
+            this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.openFileToolStripMenuItem.Text = "Open File";
+            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -123,7 +151,7 @@
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -189,6 +217,9 @@
             // 
             // ContactsList
             // 
+            this.ContactsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ContactsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ContactsCol});
             this.ContactsList.Location = new System.Drawing.Point(12, 38);
@@ -206,6 +237,7 @@
             // 
             // RemoveButton
             // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveButton.Image = global::ContactsApp.Properties.Resources.remove;
             this.RemoveButton.Location = new System.Drawing.Point(110, 480);
@@ -217,6 +249,7 @@
             // 
             // EditButton
             // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Image = global::ContactsApp.Properties.Resources.edit;
             this.EditButton.Location = new System.Drawing.Point(61, 480);
@@ -228,6 +261,8 @@
             // 
             // FindTextbox
             // 
+            this.FindTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FindTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FindTextbox.Location = new System.Drawing.Point(52, 10);
             this.FindTextbox.Name = "FindTextbox";
@@ -236,6 +271,8 @@
             // 
             // FindLabel
             // 
+            this.FindLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.FindLabel.AutoSize = true;
             this.FindLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FindLabel.Location = new System.Drawing.Point(9, 13);
@@ -246,6 +283,7 @@
             // 
             // AddButton
             // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Image = ((System.Drawing.Image)(resources.GetObject("AddButton.Image")));
             this.AddButton.Location = new System.Drawing.Point(12, 480);
@@ -386,34 +424,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // safeFileToolStripMenuItem
-            // 
-            this.safeFileToolStripMenuItem.Name = "safeFileToolStripMenuItem";
-            this.safeFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.safeFileToolStripMenuItem.Text = "Safe File";
-            this.safeFileToolStripMenuItem.Click += new System.EventHandler(this.safeFileToolStripMenuItem_Click);
-            // 
-            // safeAsToolStripMenuItem
-            // 
-            this.safeAsToolStripMenuItem.Name = "safeAsToolStripMenuItem";
-            this.safeAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.safeAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.safeAsToolStripMenuItem.Text = "Safe As";
-            this.safeAsToolStripMenuItem.Click += new System.EventHandler(this.safeAsToolStripMenuItem_Click);
-            // 
-            // openFileToolStripMenuItem
-            // 
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openFileToolStripMenuItem.Text = "Open File";
-            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // MainForm
             // 

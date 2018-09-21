@@ -79,9 +79,9 @@ namespace ContactsAppUI
             if (addContact.ShowDialog() == DialogResult.OK)
             {
                 _project.Contacts.Add(addContact.ContactData);
+                _isProjectChanged = true;
             }
             FillListView(_project.Contacts);
-            _isProjectChanged = true;
         }
         
         /// <summary>
@@ -168,6 +168,7 @@ namespace ContactsAppUI
                 _project.Contacts.RemoveAt(index);
                 ContactsList.Items[index].Remove();
                 _project.Contacts.Insert(index,editContact.ContactData);
+                _isProjectChanged = true;
             }
             FillListView(_project.Contacts);
         }
@@ -213,6 +214,15 @@ namespace ContactsAppUI
             FillListView(_project.Contacts);
             _isProjectChanged = false;
 
+        }
+
+        private void isEditRemoveButtonAvalible()
+        {
+            if (ContactsList.Items.Count == 0)
+            {
+                EditButton.Visible = false;
+                RemoveButton.Visible = false;
+            }
         }
     }
 }
