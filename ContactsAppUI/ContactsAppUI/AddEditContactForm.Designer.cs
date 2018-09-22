@@ -119,6 +119,7 @@
             this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
             this.PhoneTextbox.TabIndex = 4;
             this.PhoneTextbox.WordWrap = false;
+            this.PhoneTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneTextbox_KeyPress);
             // 
             // EmailTextbox
             // 

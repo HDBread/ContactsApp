@@ -178,5 +178,20 @@ namespace ContactsApp
             EmailTextbox.Text = contact.Email;
             VkTextbox.Text = contact.Vk;
         }
+
+        /// <summary>
+        /// Проверка ввода только цифр
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PhoneTextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number) && number != 8)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

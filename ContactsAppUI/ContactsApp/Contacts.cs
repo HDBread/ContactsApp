@@ -20,7 +20,7 @@ namespace ContactsApp
                     throw new ArgumentException("Длина фамилии должна быть меньше 50, а был " + value.Length);
                 }
                 else
-                    _surname = value;
+                    _surname = Char.ToUpper(value[0]) + value.Substring(1);
             }
         }
 
@@ -40,7 +40,7 @@ namespace ContactsApp
                     throw new ArgumentException("Длина имени должно быть меньше 50, а был " + value.Length);
                 }
                 else
-                    _name = value;
+                    _name = Char.ToUpper(value[0]) + value.Substring(1);
             }
 
         }
