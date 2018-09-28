@@ -207,6 +207,16 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (_isProjectChanged == true)
+            {
+                MessageBox.Show("Есть несохраненные данные. Желаете сохранить их перед открытием новых?",
+                    "Save before open",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    safeAsToolStripMenuItem_Click(sender,e);
+                }
+            }
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.ShowDialog();
             string fileName = openFile.FileName;

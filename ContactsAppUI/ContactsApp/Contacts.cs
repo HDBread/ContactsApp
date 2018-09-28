@@ -4,6 +4,9 @@ namespace ContactsApp
 {
     public class Contacts
     {
+        /// <summary>
+        /// Свойство фамилия
+        /// </summary>
         private string _surname;
         public string Surname
         {
@@ -24,6 +27,9 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Свойство Имя
+        /// </summary>
         private string _name;
         public string Name
         {
@@ -45,6 +51,9 @@ namespace ContactsApp
 
         }
 
+        /// <summary>
+        /// Свойство номер телефона
+        /// </summary>
         private long _phoneNumber;
         public long PhoneNumber
         {
@@ -58,7 +67,7 @@ namespace ContactsApp
                 }
                 else if (value.ToString().Length > 11)
                 {
-                    throw new ArgumentException("Длина фамилии должна быть меньше 11, а был " + value.ToString().Length);
+                    throw new ArgumentException("Длина номера телефона должна быть меньше 11, а был " + value.ToString().Length);
                 }
                 else if (value.ToString()[0] != '7')
                 {
@@ -68,6 +77,9 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Свойство дата рождения
+        /// </summary>
         private DateTime _date;
         public DateTime DateOfBirhday
         {
@@ -83,6 +95,9 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Свойство почтовый ящик
+        /// </summary>
         private string _email;
         public string Email
         {
@@ -103,6 +118,9 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Свойство idВконтакте
+        /// </summary>
         private string _vk;
         public string Vk
         {
