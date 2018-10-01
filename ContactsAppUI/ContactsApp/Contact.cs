@@ -2,8 +2,10 @@
 
 namespace ContactsApp
 {
-    public class Contacts
+    public class Contact : ICloneable
     {
+        
+
         /// <summary>
         /// Свойство фамилия
         /// </summary>
@@ -60,7 +62,7 @@ namespace ContactsApp
             get => _phoneNumber;
             set
             {
-                
+
                 if (value.ToString() == string.Empty)
                 {
                     throw new ArgumentNullException("Field 'PhoneNumber' can't be empty");
@@ -139,6 +141,18 @@ namespace ContactsApp
                 else
                     _vk = value;
             }
+        }
+
+        public object Clone()
+        {
+            Contact newContact = new Contact();
+            newContact.Name = Name;
+            newContact.Surname = Surname;
+            newContact.PhoneNumber = PhoneNumber;
+            newContact.DateOfBirhday = DateOfBirhday;
+            newContact.Email = Email;
+            newContact.Vk = Vk;
+            return newContact;
         }
     }
 }

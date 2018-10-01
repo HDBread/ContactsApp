@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace ContactsApp
@@ -10,9 +11,9 @@ namespace ContactsApp
             InitializeComponent();
         }
 
-        private Contacts _contact = new Contacts();
+        private Contact _contact = new Contact();
 
-        public Contacts ContactData => _contact;
+        public Contact ContactData => _contact;
 
         
         private void CancelButton_Click(object sender, EventArgs e)
@@ -169,7 +170,7 @@ namespace ContactsApp
             return true;
         }
 
-        public void ContactView(Contacts contact)
+        public void ContactView(Contact contact)
         {
             SurnameTextbox.Text = contact.Surname;
             NameTextbox.Text = contact.Name;

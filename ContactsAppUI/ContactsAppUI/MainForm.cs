@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactsApp;
-using System.IO;
-using System.Security.Policy;
-using Newtonsoft.Json;
 
 namespace ContactsAppUI
 {
@@ -27,6 +18,8 @@ namespace ContactsAppUI
         public MainForm()
         {
             InitializeComponent();
+            _project = _projectManager.LoadFile(_project, String.Empty);
+            FillListView(_project.Contacts);
         }
 
         /// <summary>
@@ -89,10 +82,10 @@ namespace ContactsAppUI
         /// то список будет очищен и снова заполнен.
         /// </summary>
         /// <param name="_contact">Список контактов</param>
-        public void FillListView(List<Contacts> _contact)
+        public void FillListView(List<Contact> _contact)
         {
             if (ContactsList.Items.Count > 0) ContactsList.Items.Clear();
-            foreach (Contacts contact in _contact)
+            foreach (Contact contact in _contact)
             {
                 AddNewClient(contact);
             }
@@ -102,7 +95,7 @@ namespace ContactsAppUI
         /// Добавить нового контакта
         /// </summary>
         /// <param name="contact">Контакт</param>
-        public void AddNewClient(Contacts contact)
+        public void AddNewClient(Contact contact)
         {
             int index = ContactsList.Items.Add(contact.Surname).Index;
             ContactsList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
@@ -180,8 +173,8 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void safeFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProjectManager projectManager = new ProjectManager();
-           // projectManager.SaveFile(_project);
+            _projectManager.SaveFile(_project, String.Empty);
+            _isProjectChanged = false;
         }
 
         /// <summary>
@@ -214,9 +207,10 @@ namespace ContactsAppUI
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    safeAsToolStripMenuItem_Click(sender,e);
+                    safeAsToolStripMenuItem_Click(sender, e);
                 }
             }
+
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.ShowDialog();
             string fileName = openFile.FileName;
@@ -224,15 +218,6 @@ namespace ContactsAppUI
             FillListView(_project.Contacts);
             _isProjectChanged = false;
 
-        }
-
-        private void isEditRemoveButtonAvalible()
-        {
-            if (ContactsList.Items.Count == 0)
-            {
-                EditButton.Visible = false;
-                RemoveButton.Visible = false;
-            }
         }
     }
 }

@@ -98,15 +98,17 @@
             // safeFileToolStripMenuItem
             // 
             this.safeFileToolStripMenuItem.Name = "safeFileToolStripMenuItem";
-            this.safeFileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.safeFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.safeFileToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.safeFileToolStripMenuItem.Text = "Safe File";
             this.safeFileToolStripMenuItem.Click += new System.EventHandler(this.safeFileToolStripMenuItem_Click);
             // 
             // safeAsToolStripMenuItem
             // 
             this.safeAsToolStripMenuItem.Name = "safeAsToolStripMenuItem";
-            this.safeAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.safeAsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.safeAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.safeAsToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.safeAsToolStripMenuItem.Text = "Safe As";
             this.safeAsToolStripMenuItem.Click += new System.EventHandler(this.safeAsToolStripMenuItem_Click);
             // 
@@ -114,20 +116,20 @@
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -232,8 +234,8 @@
             // 
             // ContactsCol
             // 
-            this.ContactsCol.Text = "Contacts";
-            this.ContactsCol.Width = 64;
+            this.ContactsCol.Text = "Contact";
+            this.ContactsCol.Width = 365;
             // 
             // RemoveButton
             // 
