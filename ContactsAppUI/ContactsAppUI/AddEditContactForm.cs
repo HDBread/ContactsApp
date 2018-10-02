@@ -100,7 +100,7 @@ namespace ContactsApp
             //TryCatch PhoneNumber
             try
             {
-                _contact.PhoneNumber = Convert.ToInt64(PhoneTextbox.Text);
+                _contact.Num.Number = Convert.ToInt64(PhoneTextbox.Text);
 
             }
             catch (ArgumentNullException e)
@@ -175,7 +175,7 @@ namespace ContactsApp
             SurnameTextbox.Text = contact.Surname;
             NameTextbox.Text = contact.Name;
             BirthdayDayTool.Value = contact.DateOfBirhday;
-            PhoneTextbox.Text = Convert.ToString(contact.PhoneNumber);
+            PhoneTextbox.Text = Convert.ToString(contact.Num.Number);
             EmailTextbox.Text = contact.Email;
             VkTextbox.Text = contact.Vk;
         }
@@ -192,6 +192,85 @@ namespace ContactsApp
             if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void SurnameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string text = SurnameTextbox.Text;
+            if (text.Length <= 50 && text.Length != 0)
+            {
+                SurnameTextbox.BackColor = Color.White;
+            }
+            else
+            {
+                SurnameTextbox.BackColor = Color.LightSalmon;
+            }
+
+        }
+
+        private void VkTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string text = VkTextbox.Text;
+            if (text.Length <= 15 && text.Length != 0)
+            {
+                VkTextbox.BackColor = Color.White;
+            }
+            else
+            {
+                VkTextbox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void NameTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string text = NameTextbox.Text;
+            if (text.Length <= 50 && text.Length != 0)
+            {
+                NameTextbox.BackColor = Color.White;
+            }
+            else
+            {
+                NameTextbox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void EmailTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string text = EmailTextbox.Text;
+            if (text.Length <= 50 && text.Length != 0)
+            {
+                EmailTextbox.BackColor = Color.White;
+            }
+            else
+            {
+                EmailTextbox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void PhoneTextbox_TextChanged(object sender, EventArgs e)
+        {
+            string text = PhoneTextbox.Text;
+            long number;
+            if (long.TryParse(text, out number))
+            {
+                if (number >= 70000000000 && number <= 79999999999)
+                {
+                    PhoneTextbox.BackColor = Color.White;
+                }
+                else if (text.Length == 0)
+                {
+                    PhoneTextbox.BackColor = Color.LightSalmon;
+                }
+                else
+                {
+                    PhoneTextbox.BackColor = Color.LightSalmon;
+                }
+            }
+
+            else
+            {
+                SurnameTextbox.BackColor = Color.LightSalmon;
             }
         }
     }

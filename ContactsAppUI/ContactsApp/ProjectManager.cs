@@ -6,7 +6,7 @@ namespace ContactsApp
 {
     public class ProjectManager
     {
-        private string _filePathDefault = @"C:\Users\User\Desktop\ТУСУР\НТвП\saveFile\Contacts.txt";
+        private string _filePathDefault = @"C:\Users\User\Desktop\ТУСУР\НТвП\saveFile\New.txt";
 
         public void SaveFile(Project _project, string _filePath)
         {

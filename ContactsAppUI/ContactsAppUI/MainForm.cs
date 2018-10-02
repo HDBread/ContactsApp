@@ -113,7 +113,7 @@ namespace ContactsAppUI
                 SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
                 NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
                 BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirhday;
-                PhoneTextbox.Text = Convert.ToString(_project.Contacts[ContactsList.SelectedIndices[0]].PhoneNumber);
+                PhoneTextbox.Text = Convert.ToString(_project.Contacts[ContactsList.SelectedIndices[0]].Num.Number);
                 EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
                 VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;
             }
@@ -184,13 +184,7 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void safeAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog saveFileAs = new SaveFileDialog();
-            saveFileAs.Filter = "Только текстовые файлы (*.txt) | *.txt";
-            saveFileAs.ShowDialog();
-            string fileName = saveFileAs.FileName;
-            _projectManager.SaveFile(_project, fileName);
-            _isProjectChanged = false;
-
+            SaveFile();
         }
 
         /// <summary>
@@ -207,7 +201,7 @@ namespace ContactsAppUI
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (DialogResult == DialogResult.Yes)
                 {
-                    safeAsToolStripMenuItem_Click(sender, e);
+                    SaveFile();
                 }
             }
 
@@ -218,6 +212,16 @@ namespace ContactsAppUI
             FillListView(_project.Contacts);
             _isProjectChanged = false;
 
+        }
+
+        private void SaveFile()
+        {
+            SaveFileDialog saveFileAs = new SaveFileDialog();
+            saveFileAs.Filter = "Только текстовые файлы (*.txt) | *.txt";
+            saveFileAs.ShowDialog();
+            string fileName = saveFileAs.FileName;
+            _projectManager.SaveFile(_project, fileName);
+            _isProjectChanged = false;
         }
     }
 }

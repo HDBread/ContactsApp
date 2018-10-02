@@ -100,6 +100,7 @@
             this.SurnameTextbox.Name = "SurnameTextbox";
             this.SurnameTextbox.Size = new System.Drawing.Size(462, 22);
             this.SurnameTextbox.TabIndex = 1;
+            this.SurnameTextbox.TextChanged += new System.EventHandler(this.SurnameTextbox_TextChanged);
             // 
             // NameTextbox
             // 
@@ -109,6 +110,7 @@
             this.NameTextbox.Name = "NameTextbox";
             this.NameTextbox.Size = new System.Drawing.Size(462, 22);
             this.NameTextbox.TabIndex = 2;
+            this.NameTextbox.TextChanged += new System.EventHandler(this.NameTextbox_TextChanged);
             // 
             // PhoneTextbox
             // 
@@ -119,6 +121,7 @@
             this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
             this.PhoneTextbox.TabIndex = 4;
             this.PhoneTextbox.WordWrap = false;
+            this.PhoneTextbox.TextChanged += new System.EventHandler(this.PhoneTextbox_TextChanged);
             this.PhoneTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneTextbox_KeyPress);
             // 
             // EmailTextbox
@@ -129,6 +132,7 @@
             this.EmailTextbox.Name = "EmailTextbox";
             this.EmailTextbox.Size = new System.Drawing.Size(462, 22);
             this.EmailTextbox.TabIndex = 5;
+            this.EmailTextbox.TextChanged += new System.EventHandler(this.EmailTextbox_TextChanged);
             // 
             // VkTextbox
             // 
@@ -138,6 +142,7 @@
             this.VkTextbox.Name = "VkTextbox";
             this.VkTextbox.Size = new System.Drawing.Size(462, 22);
             this.VkTextbox.TabIndex = 6;
+            this.VkTextbox.TextChanged += new System.EventHandler(this.VkTextbox_TextChanged);
             // 
             // EmailLabel
             // 

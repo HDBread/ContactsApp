@@ -56,28 +56,8 @@ namespace ContactsApp
         /// <summary>
         /// Свойство номер телефона
         /// </summary>
-        private long _phoneNumber;
-        public long PhoneNumber
-        {
-            get => _phoneNumber;
-            set
-            {
-
-                if (value.ToString() == string.Empty)
-                {
-                    throw new ArgumentNullException("Field 'PhoneNumber' can't be empty");
-                }
-                else if (value.ToString().Length > 11)
-                {
-                    throw new ArgumentException("Длина номера телефона должна быть меньше 11, а был " + value.ToString().Length);
-                }
-                else if (value.ToString()[0] != '7')
-                {
-                    throw new FormatException("Номер телефона должен начинаться с 7, а начинается с " + value.ToString()[0]);
-                }
-                _phoneNumber = value;
-            }
-        }
+        public PhoneNumber Num;
+        
 
         /// <summary>
         /// Свойство дата рождения
@@ -148,7 +128,7 @@ namespace ContactsApp
             Contact newContact = new Contact();
             newContact.Name = Name;
             newContact.Surname = Surname;
-            newContact.PhoneNumber = PhoneNumber;
+            newContact.Num.Number = Num.Number;
             newContact.DateOfBirhday = DateOfBirhday;
             newContact.Email = Email;
             newContact.Vk = Vk;
