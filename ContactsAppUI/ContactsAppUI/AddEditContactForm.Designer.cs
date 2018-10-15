@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SubnameLabebl = new System.Windows.Forms.Label();
             this.BirthdayLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.BirthdayDayTool = new System.Windows.Forms.DateTimePicker();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
+            this.errorToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // SubnameLabebl
@@ -249,5 +251,6 @@
         private System.Windows.Forms.DateTimePicker BirthdayDayTool;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button OKButton;
+        private System.Windows.Forms.ToolTip errorToolTip;
     }
 }

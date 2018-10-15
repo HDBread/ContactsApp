@@ -4,18 +4,40 @@ namespace ContactsApp
 {
     public class Contact : ICloneable
     {
-        
+        /// <summary>
+        /// Объект(?) свойста фамилия
+        /// </summary>
+        private string _surname;
+
+        /// <summary>
+        /// Объект(?) свойста имя
+        /// </summary>
+        private string _name;
+
+        /// <summary>
+        /// Объект(?) свойста дата рождения
+        /// </summary>
+        private DateTime _date;
+
+        /// <summary>
+        /// Объект(?) свойста почтовый ящик
+        /// </summary>
+        private string _email;
+
+        /// <summary>
+        /// Объект(?) свойста id вконтакте
+        /// </summary>
+        private string _vk;
 
         /// <summary>
         /// Свойство фамилия
         /// </summary>
-        private string _surname;
         public string Surname
         {
             get => _surname;
             set
             {
-                
+
                 if (value == string.Empty)
                 {
                     throw new ArgumentNullException("Field 'Surname' can't be empty");
@@ -32,13 +54,12 @@ namespace ContactsApp
         /// <summary>
         /// Свойство Имя
         /// </summary>
-        private string _name;
         public string Name
         {
             get => _name;
             set
             {
-                
+
                 if (value == string.Empty)
                 {
                     throw new ArgumentNullException("Field 'Name' can't be empty");
@@ -56,13 +77,12 @@ namespace ContactsApp
         /// <summary>
         /// Свойство номер телефона
         /// </summary>
-        public PhoneNumber Num;
-        
+        public PhoneNumber Num = new PhoneNumber();
+
 
         /// <summary>
         /// Свойство дата рождения
         /// </summary>
-        private DateTime _date;
         public DateTime DateOfBirhday
         {
             get => _date;
@@ -70,7 +90,8 @@ namespace ContactsApp
             {
                 if (value > DateTime.Today)
                 {
-                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Today.ToShortDateString() + ", а был " + value.Date.ToShortDateString());
+                    throw new ArgumentException("Дата не должна быть больше " + DateTime.Today.ToShortDateString() +
+                                                ", а был " + value.Date.ToShortDateString());
                 }
                 else
                     _date = value;
@@ -80,13 +101,12 @@ namespace ContactsApp
         /// <summary>
         /// Свойство почтовый ящик
         /// </summary>
-        private string _email;
         public string Email
         {
             get => _email;
             set
             {
-                
+
                 if (value == string.Empty)
                 {
                     throw new ArgumentNullException("Field 'Email' can't be empty");
@@ -103,16 +123,15 @@ namespace ContactsApp
         /// <summary>
         /// Свойство idВконтакте
         /// </summary>
-        private string _vk;
         public string Vk
         {
             get => _vk;
             set
             {
-                
+
                 if (value == string.Empty)
                 {
-                   throw new ArgumentNullException("Field 'Vk' can't be empty");
+                    throw new ArgumentNullException("Field 'Vk' can't be empty");
                 }
                 else if (value.Length > 15)
                 {
@@ -123,6 +142,10 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Метод клонирования контакта
+        /// </summary>
+        /// <returns>Склонированный контакт</returns>
         public object Clone()
         {
             Contact newContact = new Contact();

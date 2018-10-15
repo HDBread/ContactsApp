@@ -7,14 +7,24 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Флаг на изменение состояния программы
+        /// </summary>
         private bool _isProjectChanged = false;
 
         /// <summary>
         /// Объявление нового экземпляра списка
         /// </summary>
         private Project _project = new Project();
+
+        /// <summary>
+        /// Обявление нового экземпляра для загрузи/сохранения фанных 
+        /// </summary>
         private ProjectManager _projectManager = new ProjectManager();
 
+        /// <summary>
+        /// Загрузка данных при запуске программы
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -29,6 +39,7 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Форма для показа окна About
             Form About = new AboutForm();
             About.ShowDialog();
         }
@@ -52,7 +63,7 @@ namespace ContactsAppUI
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    safeAsToolStripMenuItem_Click(sender,e);
+                    saveAsToolStripMenuItem_Click(sender,e);
                 }
                 else
                 {
@@ -68,15 +79,17 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void createContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             AddEditContactForm addContact = new AddEditContactForm();
             if (addContact.ShowDialog() == DialogResult.OK)
             {
                 _project.Contacts.Add(addContact.ContactData);
                 _isProjectChanged = true;
+                SaveFile();
             }
             FillListView(_project.Contacts);
         }
-        
+
         /// <summary>
         /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
         /// то список будет очищен и снова заполнен.
@@ -113,7 +126,8 @@ namespace ContactsAppUI
                 SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
                 NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
                 BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirhday;
-                PhoneTextbox.Text = Convert.ToString(_project.Contacts[ContactsList.SelectedIndices[0]].Num.Number);
+                //TODO
+                PhoneTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Num.Number.ToString();
                 EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
                 VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;
             }
@@ -143,6 +157,7 @@ namespace ContactsAppUI
                 _project.Contacts.RemoveAt(index);
                 ContactsList.Items[index].Remove();
                 _isProjectChanged = true;
+                SaveFile();
             }
         }
 
@@ -162,6 +177,7 @@ namespace ContactsAppUI
                 ContactsList.Items[index].Remove();
                 _project.Contacts.Insert(index,editContact.ContactData);
                 _isProjectChanged = true;
+                SaveFile();
             }
             FillListView(_project.Contacts);
         }
@@ -171,10 +187,9 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void safeFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _projectManager.SaveFile(_project, String.Empty);
-            _isProjectChanged = false;
+            SaveFile();
         }
 
         /// <summary>
@@ -182,9 +197,9 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void safeAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFile();
+            SaveFileAs();
         }
 
         /// <summary>
@@ -214,13 +229,25 @@ namespace ContactsAppUI
 
         }
 
-        private void SaveFile()
+        /// <summary>
+        /// Метод для сохранения файла с выбором ферикории сохранения
+        /// </summary>
+        private void SaveFileAs()
         {
             SaveFileDialog saveFileAs = new SaveFileDialog();
             saveFileAs.Filter = "Только текстовые файлы (*.txt) | *.txt";
             saveFileAs.ShowDialog();
             string fileName = saveFileAs.FileName;
             _projectManager.SaveFile(_project, fileName);
+            _isProjectChanged = false;
+        }
+
+        /// <summary>
+        /// Метод сохранения файла без выбора дериктории сохранения
+        /// </summary>
+        private void SaveFile()
+        {
+            _projectManager.SaveFile(_project, String.Empty);
             _isProjectChanged = false;
         }
     }

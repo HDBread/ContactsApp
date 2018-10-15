@@ -100,6 +100,7 @@ namespace ContactsApp
             //TryCatch PhoneNumber
             try
             {
+                _contact.Num = new PhoneNumber();
                 _contact.Num.Number = Convert.ToInt64(PhoneTextbox.Text);
 
             }
@@ -196,7 +197,7 @@ namespace ContactsApp
         }
 
         private void SurnameTextbox_TextChanged(object sender, EventArgs e)
-        {
+        {//TODO
             string text = SurnameTextbox.Text;
             if (text.Length <= 50 && text.Length != 0)
             {
@@ -210,7 +211,7 @@ namespace ContactsApp
         }
 
         private void VkTextbox_TextChanged(object sender, EventArgs e)
-        {
+        {//TODO
             string text = VkTextbox.Text;
             if (text.Length <= 15 && text.Length != 0)
             {

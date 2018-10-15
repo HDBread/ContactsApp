@@ -1,27 +1,35 @@
 ﻿using System;
 
 namespace ContactsApp
-{
+{   /// <summary>
+    /// Класс для номеров телефона
+    /// </summary>
     public class PhoneNumber
     {
+        /// <summary>
+        /// Объект(?) номера телефона
+        /// </summary>
         private long _phoneNumber;
+        /// <summary>
+        /// Свойство номера телефона
+        /// </summary>
         public long Number
         {
             get => _phoneNumber;
             set
             {
-
-                if (value.ToString() == string.Empty)
+                var str = value.ToString();
+                if (str == string.Empty)
                 {
                     throw new ArgumentNullException("Field 'PhoneNumber' can't be empty");
                 }
-                else if (value.ToString().Length != 11)
+                else if (str.Length != 11)
                 {
-                    throw new ArgumentException("Длина номера телефона должна быть ровно 11 символов, а был " + value.ToString().Length);
+                    throw new ArgumentException("Длина номера телефона должна быть ровно 11 символов, а был " + str.Length);
                 }
-                else if (value.ToString()[0] != '7')
+                else if (str[0] != '7')
                 {
-                    throw new FormatException("Номер телефона должен начинаться с 7, а начинается с " + value.ToString()[0]);
+                    throw new FormatException("Номер телефона должен начинаться с 7, а начинается с " + str[0]);
                 }
                 _phoneNumber = value;
             }
