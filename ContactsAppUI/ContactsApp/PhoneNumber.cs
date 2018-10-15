@@ -23,7 +23,7 @@ namespace ContactsApp
                 {
                     throw new ArgumentNullException("Field 'PhoneNumber' can't be empty");
                 }
-                else if (str.Length != 11)
+                else if (value < 70000000000 | value > 79999999999)
                 {
                     throw new ArgumentException("Длина номера телефона должна быть ровно 11 символов, а был " + str.Length);
                 }

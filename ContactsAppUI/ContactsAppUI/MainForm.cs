@@ -13,7 +13,7 @@ namespace ContactsAppUI
         private bool _isProjectChanged = false;
 
         /// <summary>
-        /// Объявление нового экземпляра списка
+        /// Объявление нового экземпляра списка контактов
         /// </summary>
         private Project _project = new Project();
 
@@ -126,7 +126,6 @@ namespace ContactsAppUI
                 SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
                 NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
                 BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirhday;
-                //TODO
                 PhoneTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Num.Number.ToString();
                 EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
                 VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;

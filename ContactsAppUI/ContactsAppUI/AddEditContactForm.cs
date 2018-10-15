@@ -21,6 +21,7 @@ namespace ContactsApp
             this.Close();
         }
 
+        //TODO: проверка перед передачи данных в список
         /// <summary>
         /// Кнопка ОК. Выполняется проверка на не пустые поля 
         /// </summary>
@@ -41,53 +42,11 @@ namespace ContactsApp
         /// <returns>Истину, если все поля введены правильно</returns>
         public bool CheckCorrectInput()
         {
-            //TryCatch Surname
-            try
-            {
-                _contact.Surname = SurnameTextbox.Text;
-
-            }
-            catch (ArgumentNullException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SurnameTextbox.Focus();
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                SurnameTextbox.Focus();
-                return false;
-            }
-
-            //TryCatch Name
-            try
-            {
-                _contact.Name = NameTextbox.Text;
-
-            }
-            catch (ArgumentNullException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NameTextbox.Focus();
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                NameTextbox.Focus();
-                return false;
-            }
 
             //TryCatch Birthday
             try
             {
                 _contact.DateOfBirhday = BirthdayDayTool.Value;
-
             }
             catch (ArgumentException e)
             {
@@ -95,77 +54,7 @@ namespace ContactsApp
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 BirthdayDayTool.Focus();
                 return false;
-            }
 
-            //TryCatch PhoneNumber
-            try
-            {
-                _contact.Num = new PhoneNumber();
-                _contact.Num.Number = Convert.ToInt64(PhoneTextbox.Text);
-
-            }
-            catch (ArgumentNullException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PhoneTextbox.Focus();
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PhoneTextbox.Focus();
-                return false;
-            }
-            catch (FormatException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                PhoneTextbox.Focus();
-                return false;
-            }
-
-            //TryCatch Email
-            try
-            {
-                _contact.Email = EmailTextbox.Text;
-
-            }
-            catch (ArgumentNullException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EmailTextbox.Focus();
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                EmailTextbox.Focus();
-                return false;
-            }
-
-            //TryCatch Vk
-            try
-            {
-                _contact.Vk = VkTextbox.Text;
-
-            }
-            catch (ArgumentNullException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                VkTextbox.Focus();
-                return false;
-            }
-            catch (ArgumentException e)
-            {
-                MessageBox.Show(e.Message, "Add Contact Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                VkTextbox.Focus();
-                return false;
             }
 
             return true;
@@ -196,83 +85,183 @@ namespace ContactsApp
             }
         }
 
+        /// <summary>
+        /// Метод проверки ввода фамилии
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SurnameTextbox_TextChanged(object sender, EventArgs e)
-        {//TODO
+        {
             string text = SurnameTextbox.Text;
-            if (text.Length <= 50 && text.Length != 0)
+            try
             {
+                _contact.Surname = text;
                 SurnameTextbox.BackColor = Color.White;
+
             }
-            else
+            catch (ArgumentNullException ex)
             {
+                MessageBox.Show(ex.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SurnameTextbox.Focus();
                 SurnameTextbox.BackColor = Color.LightSalmon;
+
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                SurnameTextbox.Focus();
+                SurnameTextbox.BackColor = Color.LightSalmon;
+
             }
 
         }
 
-        private void VkTextbox_TextChanged(object sender, EventArgs e)
-        {//TODO
-            string text = VkTextbox.Text;
-            if (text.Length <= 15 && text.Length != 0)
-            {
-                VkTextbox.BackColor = Color.White;
-            }
-            else
-            {
-                VkTextbox.BackColor = Color.LightSalmon;
-            }
-        }
-
+        /// <summary>
+        /// Метод проверки ввода имени
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NameTextbox_TextChanged(object sender, EventArgs e)
         {
-            string text = NameTextbox.Text;
-            if (text.Length <= 50 && text.Length != 0)
+            try
             {
+                _contact.Name = NameTextbox.Text;
                 NameTextbox.BackColor = Color.White;
+
             }
-            else
+            catch (ArgumentNullException ex)
             {
+                MessageBox.Show(ex.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NameTextbox.Focus();
+                NameTextbox.BackColor = Color.LightSalmon;
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                NameTextbox.Focus();
                 NameTextbox.BackColor = Color.LightSalmon;
             }
         }
 
-        private void EmailTextbox_TextChanged(object sender, EventArgs e)
+        //TODO: Как задать дату?
+        /// <summary>
+        /// Метод проверки ввода даты
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ex"></param>
+        private void DataTextbox_TextChanged(object sender, EventArgs ex)
         {
-            string text = EmailTextbox.Text;
-            if (text.Length <= 50 && text.Length != 0)
+            try
             {
-                EmailTextbox.BackColor = Color.White;
+                _contact.DateOfBirhday = BirthdayDayTool.Value;
+
             }
-            else
+            catch (ArgumentException e)
             {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                BirthdayDayTool.Focus();
+                
+            }
+        }
+
+        /// <summary>
+        /// Метод проверки ввода номера телефона
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ex"></param>
+        private void PhoneTextbox_TextChanged(object sender, EventArgs ex)
+        {
+            try
+            {
+                _contact.Num = new PhoneNumber();
+                _contact.Num.Number = Convert.ToInt64(PhoneTextbox.Text);
+                PhoneTextbox.BackColor = Color.White;
+
+            }
+            catch (ArgumentNullException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PhoneTextbox.Focus();
+                PhoneTextbox.BackColor = Color.LightSalmon;
+            }
+            catch (ArgumentException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PhoneTextbox.Focus();
+                PhoneTextbox.BackColor = Color.LightSalmon;
+            }
+            catch (FormatException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                PhoneTextbox.Focus();
+                PhoneTextbox.BackColor = Color.LightSalmon;
+            }
+        }
+
+        /// <summary>
+        /// Метод проверки ввода почтового ящика
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ex"></param>
+        private void EmailTextbox_TextChanged(object sender, EventArgs ex)
+        {
+            try
+            {
+                _contact.Email = EmailTextbox.Text;
+                EmailTextbox.BackColor = Color.White;
+
+            }
+            catch (ArgumentNullException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EmailTextbox.Focus();
+                EmailTextbox.BackColor = Color.LightSalmon;
+            }
+            catch (ArgumentException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                EmailTextbox.Focus();
                 EmailTextbox.BackColor = Color.LightSalmon;
             }
         }
 
-        private void PhoneTextbox_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Метод проверки ввода id Вконтакте
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="ex"></param>
+        private void VkTextbox_TextChanged(object sender, EventArgs ex)
         {
-            string text = PhoneTextbox.Text;
-            long number;
-            if (long.TryParse(text, out number))
+            try
             {
-                if (number >= 70000000000 && number <= 79999999999)
-                {
-                    PhoneTextbox.BackColor = Color.White;
-                }
-                else if (text.Length == 0)
-                {
-                    PhoneTextbox.BackColor = Color.LightSalmon;
-                }
-                else
-                {
-                    PhoneTextbox.BackColor = Color.LightSalmon;
-                }
+                _contact.Vk = VkTextbox.Text;
+                VkTextbox.BackColor = Color.White;
             }
-
-            else
+            catch (ArgumentNullException e)
             {
-                SurnameTextbox.BackColor = Color.LightSalmon;
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                VkTextbox.Focus();
+                VkTextbox.BackColor = Color.LightSalmon;
+            }
+            catch (ArgumentException e)
+            {
+                MessageBox.Show(e.Message, "Add Contact Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                VkTextbox.Focus();
+                VkTextbox.BackColor = Color.LightSalmon;
             }
         }
+
     }
 }

@@ -5,9 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ContactsApp
-{//TODO
+{
+    /// <summary>
+    /// Класс списка контактов
+    /// </summary>
     public class Project
-    {//TODO
+    {
+        /// <summary>
+        /// Задается список всех контактов
+        /// </summary>
         public List<Contact> Contacts = new List<Contact>();
     }
 }
