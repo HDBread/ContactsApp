@@ -1,1 +1,64 @@
-﻿{"Contacts":[{"Num":{"Number":79528856498},"Surname":"Резник","Name":"Грыня","DateOfBirhday":"1997-06-12T00:00:00","Email":"Rezya@gmail.com","Vk":"id@egoka"},{"Num":{"Number":79214541235},"Surname":"Петров","Name":"Василий","DateOfBirhday":"1998-06-07T00:00:00","Email":"vasya@mail.ru","Vk":"id@vasya"},{"Num":{"Number":74548452169},"Surname":"Пупкин","Name":"Вася","DateOfBirhday":"1995-07-15T00:00:00","Email":"pupok@mail.ru","Vk":"id@js"},{"Num":{"Number":79856412154},"Surname":"Добронравов","Name":"Дмитрий","DateOfBirhday":"2000-06-29T00:00:00","Email":"dobro@mail.ru","Vk":"id@goodD"},{"Num":{"Number":79995846132},"Surname":"Федотова","Name":"Елена","DateOfBirhday":"1995-07-18T00:00:00","Email":"lena@gmail.com","Vk":"id@fedota"}]}
+﻿{
+  "Contacts": [
+    {
+      "Num": {
+        "Number": 79528856498
+      },
+      "Surname": "Резник",
+      "Name": "Грыня",
+      "DateOfBirhday": "1997-06-12T00:00:00",
+      "Email": "Rezya@gmail.com",
+      "Vk": "id@egoka"
+    },
+    {
+      "Num": {
+        "Number": 79214541235
+      },
+      "Surname": "Петров",
+      "Name": "Василий",
+      "DateOfBirhday": "1998-06-07T00:00:00",
+      "Email": "vasya@mail.ru",
+      "Vk": "id@vasya"
+    },
+    {
+      "Num": {
+        "Number": 74548452169
+      },
+      "Surname": "Пупкин",
+      "Name": "Вася",
+      "DateOfBirhday": "1995-07-15T00:00:00",
+      "Email": "pupok@mail.ru",
+      "Vk": "id@js"
+    },
+    {
+      "Num": {
+        "Number": 79856412154
+      },
+      "Surname": "Добронравов",
+      "Name": "Дмитрий",
+      "DateOfBirhday": "2000-06-29T00:00:00",
+      "Email": "dobro@mail.ru",
+      "Vk": "id@goodD"
+    },
+    {
+      "Num": {
+        "Number": 79995846132
+      },
+      "Surname": "Федотова",
+      "Name": "Елена",
+      "DateOfBirhday": "1995-07-18T00:00:00",
+      "Email": "lena@gmail.com",
+      "Vk": "id@fedota"
+    },
+    {
+      "Num": {
+        "Number": 74512125412
+      },
+      "Surname": "Dfgh",
+      "Name": "Fvghj",
+      "DateOfBirhday": "2000-01-01T00:00:00",
+      "Email": "dfvgh",
+      "Vk": "cdvfghj"
+    }
+  ]
+}

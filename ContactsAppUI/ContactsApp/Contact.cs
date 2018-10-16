@@ -20,6 +20,11 @@ namespace ContactsApp
         private DateTime _date;
 
         /// <summary>
+        /// Объект(?) свойства номер телефона
+        /// </summary>
+        private PhoneNumber _phone = new PhoneNumber();
+
+        /// <summary>
         /// Объект(?) свойста почтовый ящик
         /// </summary>
         private string _email;
@@ -28,6 +33,7 @@ namespace ContactsApp
         /// Объект(?) свойста id вконтакте
         /// </summary>
         private string _vk;
+
 
         /// <summary>
         /// Свойство фамилия
@@ -77,8 +83,11 @@ namespace ContactsApp
         /// <summary>
         /// Свойство номер телефона
         /// </summary>
-        public PhoneNumber Num = new PhoneNumber();
-
+        public PhoneNumber Num
+        {
+            get => _phone;
+            set => _phone = value;
+        }
 
         /// <summary>
         /// Свойство дата рождения

@@ -78,6 +78,9 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddEditContactForm.en-150.resx">
+      <DependentUpon>AddEditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddEditContactForm.resx">
       <DependentUpon>AddEditContactForm.cs</DependentUpon>
     </EmbeddedResource>

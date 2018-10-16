@@ -16,11 +16,7 @@ namespace ContactsAppUI
         /// Объявление нового экземпляра списка контактов
         /// </summary>
         private Project _project = new Project();
-
-        /// <summary>
-        /// Обявление нового экземпляра для загрузи/сохранения фанных 
-        /// </summary>
-        private ProjectManager _projectManager = new ProjectManager();
+        
 
         /// <summary>
         /// Загрузка данных при запуске программы
@@ -28,7 +24,7 @@ namespace ContactsAppUI
         public MainForm()
         {
             InitializeComponent();
-            _project = _projectManager.LoadFile(_project, String.Empty);
+            _project = ProjectManager.LoadFile(_project, String.Empty);
             FillListView(_project.Contacts);
         }
 
@@ -63,7 +59,7 @@ namespace ContactsAppUI
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    saveAsToolStripMenuItem_Click(sender,e);
+                    SaveFileAs();
                 }
                 else
                 {
@@ -222,7 +218,7 @@ namespace ContactsAppUI
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.ShowDialog();
             string fileName = openFile.FileName;
-            _project = _projectManager.LoadFile(_project, fileName);
+            _project = ProjectManager.LoadFile(_project, fileName);
             FillListView(_project.Contacts);
             _isProjectChanged = false;
 
@@ -237,7 +233,7 @@ namespace ContactsAppUI
             saveFileAs.Filter = "Только текстовые файлы (*.txt) | *.txt";
             saveFileAs.ShowDialog();
             string fileName = saveFileAs.FileName;
-            _projectManager.SaveFile(_project, fileName);
+            ProjectManager.SaveFile(_project, fileName);
             _isProjectChanged = false;
         }
 
@@ -246,8 +242,9 @@ namespace ContactsAppUI
         /// </summary>
         private void SaveFile()
         {
-            _projectManager.SaveFile(_project, String.Empty);
+            ProjectManager.SaveFile(_project, String.Empty);
             _isProjectChanged = false;
         }
+
     }
 }

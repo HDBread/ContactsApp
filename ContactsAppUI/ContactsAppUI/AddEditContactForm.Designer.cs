@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddEditContactForm));
             this.SubnameLabebl = new System.Windows.Forms.Label();
             this.BirthdayLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
@@ -48,169 +49,101 @@
             // 
             // SubnameLabebl
             // 
-            this.SubnameLabebl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.SubnameLabebl.AutoSize = true;
-            this.SubnameLabebl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SubnameLabebl.Location = new System.Drawing.Point(35, 36);
+            resources.ApplyResources(this.SubnameLabebl, "SubnameLabebl");
             this.SubnameLabebl.Name = "SubnameLabebl";
-            this.SubnameLabebl.Size = new System.Drawing.Size(65, 16);
-            this.SubnameLabebl.TabIndex = 0;
-            this.SubnameLabebl.Text = "Surname:";
             // 
             // BirthdayLabel
             // 
-            this.BirthdayLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BirthdayLabel.AutoSize = true;
-            this.BirthdayLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BirthdayLabel.Location = new System.Drawing.Point(44, 94);
+            resources.ApplyResources(this.BirthdayLabel, "BirthdayLabel");
             this.BirthdayLabel.Name = "BirthdayLabel";
-            this.BirthdayLabel.Size = new System.Drawing.Size(60, 16);
-            this.BirthdayLabel.TabIndex = 0;
-            this.BirthdayLabel.Text = "Birthday:";
             // 
             // NameLabel
             // 
-            this.NameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameLabel.Location = new System.Drawing.Point(56, 64);
+            resources.ApplyResources(this.NameLabel, "NameLabel");
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(48, 16);
-            this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "Name:";
             // 
             // PhoneLabel
             // 
-            this.PhoneLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.PhoneLabel.AutoSize = true;
-            this.PhoneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneLabel.Location = new System.Drawing.Point(54, 120);
+            resources.ApplyResources(this.PhoneLabel, "PhoneLabel");
             this.PhoneLabel.Name = "PhoneLabel";
-            this.PhoneLabel.Size = new System.Drawing.Size(50, 16);
-            this.PhoneLabel.TabIndex = 0;
-            this.PhoneLabel.Text = "Phone:";
             // 
             // SurnameTextbox
             // 
-            this.SurnameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.SurnameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SurnameTextbox.Location = new System.Drawing.Point(110, 33);
+            resources.ApplyResources(this.SurnameTextbox, "SurnameTextbox");
             this.SurnameTextbox.Name = "SurnameTextbox";
-            this.SurnameTextbox.Size = new System.Drawing.Size(462, 22);
-            this.SurnameTextbox.TabIndex = 1;
             this.SurnameTextbox.TextChanged += new System.EventHandler(this.SurnameTextbox_TextChanged);
             // 
             // NameTextbox
             // 
-            this.NameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.NameTextbox.Location = new System.Drawing.Point(110, 61);
+            resources.ApplyResources(this.NameTextbox, "NameTextbox");
             this.NameTextbox.Name = "NameTextbox";
-            this.NameTextbox.Size = new System.Drawing.Size(462, 22);
-            this.NameTextbox.TabIndex = 2;
             this.NameTextbox.TextChanged += new System.EventHandler(this.NameTextbox_TextChanged);
             // 
             // PhoneTextbox
             // 
-            this.PhoneTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PhoneTextbox.Location = new System.Drawing.Point(110, 117);
+            resources.ApplyResources(this.PhoneTextbox, "PhoneTextbox");
             this.PhoneTextbox.Name = "PhoneTextbox";
-            this.PhoneTextbox.Size = new System.Drawing.Size(462, 22);
-            this.PhoneTextbox.TabIndex = 4;
-            this.PhoneTextbox.WordWrap = false;
             this.PhoneTextbox.TextChanged += new System.EventHandler(this.PhoneTextbox_TextChanged);
             this.PhoneTextbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneTextbox_KeyPress);
             // 
             // EmailTextbox
             // 
-            this.EmailTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmailTextbox.Location = new System.Drawing.Point(110, 145);
+            resources.ApplyResources(this.EmailTextbox, "EmailTextbox");
             this.EmailTextbox.Name = "EmailTextbox";
-            this.EmailTextbox.Size = new System.Drawing.Size(462, 22);
-            this.EmailTextbox.TabIndex = 5;
             this.EmailTextbox.TextChanged += new System.EventHandler(this.EmailTextbox_TextChanged);
             // 
             // VkTextbox
             // 
-            this.VkTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.VkTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.VkTextbox.Location = new System.Drawing.Point(110, 173);
+            resources.ApplyResources(this.VkTextbox, "VkTextbox");
             this.VkTextbox.Name = "VkTextbox";
-            this.VkTextbox.Size = new System.Drawing.Size(462, 22);
-            this.VkTextbox.TabIndex = 6;
             this.VkTextbox.TextChanged += new System.EventHandler(this.VkTextbox_TextChanged);
             // 
             // EmailLabel
             // 
-            this.EmailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.EmailLabel.AutoSize = true;
-            this.EmailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.EmailLabel.Location = new System.Drawing.Point(55, 148);
+            resources.ApplyResources(this.EmailLabel, "EmailLabel");
             this.EmailLabel.Name = "EmailLabel";
-            this.EmailLabel.Size = new System.Drawing.Size(49, 16);
-            this.EmailLabel.TabIndex = 0;
-            this.EmailLabel.Text = "E-mail:";
             // 
             // VkLabel
             // 
-            this.VkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.VkLabel.AutoSize = true;
-            this.VkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.VkLabel.Location = new System.Drawing.Point(50, 176);
+            resources.ApplyResources(this.VkLabel, "VkLabel");
             this.VkLabel.Name = "VkLabel";
-            this.VkLabel.Size = new System.Drawing.Size(56, 16);
-            this.VkLabel.TabIndex = 0;
-            this.VkLabel.Text = "Vk.com:";
             // 
             // BirthdayDayTool
             // 
-            this.BirthdayDayTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            resources.ApplyResources(this.BirthdayDayTool, "BirthdayDayTool");
             this.BirthdayDayTool.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthdayDayTool.Location = new System.Drawing.Point(110, 89);
             this.BirthdayDayTool.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
-            this.BirthdayDayTool.Size = new System.Drawing.Size(105, 22);
-            this.BirthdayDayTool.TabIndex = 3;
             this.BirthdayDayTool.Value = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
+            this.BirthdayDayTool.ValueChanged += new System.EventHandler(this.BirthdayDayTool_ValueChanged);
             // 
             // CancelButton
             // 
-            this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CancelButton.Location = new System.Drawing.Point(492, 219);
+            resources.ApplyResources(this.CancelButton, "CancelButton");
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(80, 30);
-            this.CancelButton.TabIndex = 8;
-            this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // OKButton
             // 
-            this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.OKButton.Location = new System.Drawing.Point(406, 219);
+            resources.ApplyResources(this.OKButton, "OKButton");
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(80, 30);
-            this.OKButton.TabIndex = 7;
-            this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
+            // errorToolTip
+            // 
+            this.errorToolTip.AutomaticDelay = 800;
+            this.errorToolTip.IsBalloon = true;
+            this.errorToolTip.OwnerDraw = true;
+            this.errorToolTip.ShowAlways = true;
+            this.errorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            // 
             // AddEditContactForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 261);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.BirthdayDayTool);
@@ -229,7 +162,6 @@
             this.Name = "AddEditContactForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Add/Edit Contact";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -117,7 +117,460 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SubnameLabebl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SubnameLabebl.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="SubnameLabebl.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="SubnameLabebl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 36</value>
+  </data>
+  <data name="SubnameLabebl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 16</value>
+  </data>
+  <data name="SubnameLabebl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="SubnameLabebl.Text" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
+  <data name="&gt;&gt;SubnameLabebl.Name" xml:space="preserve">
+    <value>SubnameLabebl</value>
+  </data>
+  <data name="&gt;&gt;SubnameLabebl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SubnameLabebl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SubnameLabebl.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="BirthdayLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="BirthdayLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="BirthdayLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="BirthdayLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>44, 94</value>
+  </data>
+  <data name="BirthdayLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 16</value>
+  </data>
+  <data name="BirthdayLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="BirthdayLabel.Text" xml:space="preserve">
+    <value>Birthday:</value>
+  </data>
+  <data name="&gt;&gt;BirthdayLabel.Name" xml:space="preserve">
+    <value>BirthdayLabel</value>
+  </data>
+  <data name="&gt;&gt;BirthdayLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BirthdayLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BirthdayLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="NameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="NameLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="NameLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="NameLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>56, 64</value>
+  </data>
+  <data name="NameLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 16</value>
+  </data>
+  <data name="NameLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="NameLabel.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Name" xml:space="preserve">
+    <value>NameLabel</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NameLabel.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="PhoneLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="PhoneLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="PhoneLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="PhoneLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 120</value>
+  </data>
+  <data name="PhoneLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 16</value>
+  </data>
+  <data name="PhoneLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="PhoneLabel.Text" xml:space="preserve">
+    <value>Phone:</value>
+  </data>
+  <data name="&gt;&gt;PhoneLabel.Name" xml:space="preserve">
+    <value>PhoneLabel</value>
+  </data>
+  <data name="&gt;&gt;PhoneLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PhoneLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PhoneLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="SurnameTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="SurnameTextbox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="SurnameTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 33</value>
+  </data>
+  <data name="SurnameTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 22</value>
+  </data>
+  <data name="SurnameTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;SurnameTextbox.Name" xml:space="preserve">
+    <value>SurnameTextbox</value>
+  </data>
+  <data name="&gt;&gt;SurnameTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SurnameTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SurnameTextbox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="NameTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="NameTextbox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="NameTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 61</value>
+  </data>
+  <data name="NameTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 22</value>
+  </data>
+  <data name="NameTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;NameTextbox.Name" xml:space="preserve">
+    <value>NameTextbox</value>
+  </data>
+  <data name="&gt;&gt;NameTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;NameTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;NameTextbox.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="PhoneTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="PhoneTextbox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="PhoneTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 117</value>
+  </data>
+  <data name="PhoneTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 22</value>
+  </data>
+  <data name="PhoneTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="PhoneTextbox.WordWrap" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;PhoneTextbox.Name" xml:space="preserve">
+    <value>PhoneTextbox</value>
+  </data>
+  <data name="&gt;&gt;PhoneTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PhoneTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PhoneTextbox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="EmailTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="EmailTextbox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EmailTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 145</value>
+  </data>
+  <data name="EmailTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 22</value>
+  </data>
+  <data name="EmailTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;EmailTextbox.Name" xml:space="preserve">
+    <value>EmailTextbox</value>
+  </data>
+  <data name="&gt;&gt;EmailTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EmailTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EmailTextbox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="VkTextbox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="VkTextbox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="VkTextbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 173</value>
+  </data>
+  <data name="VkTextbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>462, 22</value>
+  </data>
+  <data name="VkTextbox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;VkTextbox.Name" xml:space="preserve">
+    <value>VkTextbox</value>
+  </data>
+  <data name="&gt;&gt;VkTextbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VkTextbox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VkTextbox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="EmailLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="EmailLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="EmailLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="EmailLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>55, 148</value>
+  </data>
+  <data name="EmailLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 16</value>
+  </data>
+  <data name="EmailLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="EmailLabel.Text" xml:space="preserve">
+    <value>E-mail:</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.Name" xml:space="preserve">
+    <value>EmailLabel</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;EmailLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="VkLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="VkLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="VkLabel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="VkLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>50, 176</value>
+  </data>
+  <data name="VkLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 16</value>
+  </data>
+  <data name="VkLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="VkLabel.Text" xml:space="preserve">
+    <value>Vk.com:</value>
+  </data>
+  <data name="&gt;&gt;VkLabel.Name" xml:space="preserve">
+    <value>VkLabel</value>
+  </data>
+  <data name="&gt;&gt;VkLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;VkLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;VkLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="BirthdayDayTool.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="BirthdayDayTool.Location" type="System.Drawing.Point, System.Drawing">
+    <value>110, 89</value>
+  </data>
+  <data name="BirthdayDayTool.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 22</value>
+  </data>
+  <data name="BirthdayDayTool.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;BirthdayDayTool.Name" xml:space="preserve">
+    <value>BirthdayDayTool</value>
+  </data>
+  <data name="&gt;&gt;BirthdayDayTool.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BirthdayDayTool.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BirthdayDayTool.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="CancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="CancelButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="CancelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>492, 219</value>
+  </data>
+  <data name="CancelButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 30</value>
+  </data>
+  <data name="CancelButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="CancelButton.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="&gt;&gt;CancelButton.Name" xml:space="preserve">
+    <value>CancelButton</value>
+  </data>
+  <data name="&gt;&gt;CancelButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CancelButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;CancelButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="OKButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Right</value>
+  </data>
+  <data name="OKButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="OKButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 219</value>
+  </data>
+  <data name="OKButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 30</value>
+  </data>
+  <data name="OKButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="OKButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Name" xml:space="preserve">
+    <value>OKButton</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OKButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="errorToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>17, 26</value>
   </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>584, 261</value>
+  </data>
+  <data name="$this.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 300</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>600, 300</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add/Edit Contact</value>
+  </data>
+  <data name="&gt;&gt;errorToolTip.Name" xml:space="preserve">
+    <value>errorToolTip</value>
+  </data>
+  <data name="&gt;&gt;errorToolTip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AddEditContactForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
