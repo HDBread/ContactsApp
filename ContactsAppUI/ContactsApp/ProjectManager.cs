@@ -27,20 +27,15 @@ namespace ContactsApp
             {
                 _filePath = _filePathDefault;
             }
+
             JsonSerializer serializer = new JsonSerializer() {Formatting = Formatting.Indented};
-            try
+
+            //Открываем поток для записи в файл с указанием пути
+            using (StreamWriter sw = new StreamWriter(_filePath))
+            using (JsonWriter writer = new JsonTextWriter(sw))
             {
-                //Открываем поток для записи в файл с указанием пути
-                using (StreamWriter sw = new StreamWriter(_filePath))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    //Вызываем сериализацию и передаем объект, который хотим сериализовать
-                    serializer.Serialize(writer, _project);
-                }
-            }
-            catch (ArgumentException e)
-            {
-                
+                //Вызываем сериализацию и передаем объект, который хотим сериализовать
+                serializer.Serialize(writer, _project);
             }
         }
 

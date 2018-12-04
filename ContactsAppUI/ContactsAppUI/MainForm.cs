@@ -7,9 +7,6 @@ namespace ContactsAppUI
 {
     public partial class MainForm : Form
     {
-        /// <summary>
-        /// Флаг на изменение состояния программы
-        /// </summary>
         private bool _isProjectChanged = false;
 
         /// <summary>
@@ -121,7 +118,7 @@ namespace ContactsAppUI
             {
                 SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
                 NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
-                BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirhday;
+                BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirthday;
                 PhoneTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Num.Number.ToString();
                 EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
                 VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;

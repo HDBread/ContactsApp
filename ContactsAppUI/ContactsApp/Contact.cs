@@ -92,7 +92,7 @@ namespace ContactsApp
         /// <summary>
         /// Свойство дата рождения
         /// </summary>
-        public DateTime DateOfBirhday
+        public DateTime DateOfBirthday
         {
             get => _date;
             set
@@ -161,7 +161,7 @@ namespace ContactsApp
             newContact.Name = Name;
             newContact.Surname = Surname;
             newContact.Num.Number = Num.Number;
-            newContact.DateOfBirhday = DateOfBirhday;
+            newContact.DateOfBirthday = DateOfBirthday;
             newContact.Email = Email;
             newContact.Vk = Vk;
             return newContact;

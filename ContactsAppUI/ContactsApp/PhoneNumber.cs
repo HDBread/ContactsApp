@@ -7,7 +7,7 @@ namespace ContactsApp
     public class PhoneNumber
     {
         /// <summary>
-        /// Объект(?) номера телефона
+        /// Поле номера телефона
         /// </summary>
         private long _phoneNumber;
 

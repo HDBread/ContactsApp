@@ -274,7 +274,7 @@ namespace ContactsApp
         {
             try
             {
-                _contact.DateOfBirhday = BirthdayDayTool.Value;
+                _contact.DateOfBirthday = BirthdayDayTool.Value;
                 BirthdayDayTool.BackColor = Color.White;
                 _checkDataResult = true;
             }
@@ -296,7 +296,7 @@ namespace ContactsApp
         {
             SurnameTextbox.Text = contact.Surname;
             NameTextbox.Text = contact.Name;
-            BirthdayDayTool.Value = contact.DateOfBirhday;
+            BirthdayDayTool.Value = contact.DateOfBirthday;
             PhoneTextbox.Text = Convert.ToString(contact.Num.Number);
             EmailTextbox.Text = contact.Email;
             VkTextbox.Text = contact.Vk;
