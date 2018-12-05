@@ -1,4 +1,4 @@
-{
+﻿{
   "Contacts": [
     {
       "Surname": "Резник",
@@ -6,7 +6,7 @@
       "Num": {
         "Number": 79528856498
       },
-      "DateOfBirhday": "1997-06-12T00:00:00",
+      "DateOfBirthday": "1997-06-12T00:00:00",
       "Email": "Rezya@gmail.com",
       "Vk": "id@egoka"
     },
@@ -16,7 +16,7 @@
       "Num": {
         "Number": 79214541235
       },
-      "DateOfBirhday": "1998-06-07T00:00:00",
+      "DateOfBirthday": "1998-06-07T00:00:00",
       "Email": "vasya@mail.ru",
       "Vk": "id@vasya"
     }

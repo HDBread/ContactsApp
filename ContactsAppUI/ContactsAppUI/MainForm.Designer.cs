@@ -146,21 +146,25 @@
             // createContactToolStripMenuItem
             // 
             this.createContactToolStripMenuItem.Name = "createContactToolStripMenuItem";
-            this.createContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.createContactToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
+            this.createContactToolStripMenuItem.ShowShortcutKeys = false;
+            this.createContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createContactToolStripMenuItem.Text = "Add Contact";
             this.createContactToolStripMenuItem.Click += new System.EventHandler(this.createContactToolStripMenuItem_Click);
             // 
             // editContactToolStripMenuItem
             // 
             this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editContactToolStripMenuItem.Text = "Edit Contact";
             this.editContactToolStripMenuItem.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // removeContactToolStripMenuItem
             // 
             this.removeContactToolStripMenuItem.Name = "removeContactToolStripMenuItem";
-            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.removeContactToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.Delete;
+            this.removeContactToolStripMenuItem.ShowShortcutKeys = false;
+            this.removeContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeContactToolStripMenuItem.Text = "Remove Contact";
             this.removeContactToolStripMenuItem.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
