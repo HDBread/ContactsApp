@@ -119,6 +119,7 @@
             this.GitLink.TabIndex = 6;
             this.GitLink.TabStop = true;
             this.GitLink.Text = "HDBread/ContactsApp";
+            this.GitLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GitLink_LinkClicked);
             // 
             // AboutForm
             // 

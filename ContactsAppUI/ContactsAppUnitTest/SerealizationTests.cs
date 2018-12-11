@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using ContactsApp;
 using NUnit.Framework;
-using Assert = NUnit.Framework.Assert;
 
 namespace ContactsAppUnitTest
 {
@@ -47,7 +46,7 @@ namespace ContactsAppUnitTest
         {
             _contact = ProjectManager.LoadFile(_contact, _path + @"\TestProjectFiles\TestContacts.txt");
 
-            NUnit.Framework.Assert.AreEqual(2,_contact.Contacts.Count,"Кол-во контактов не совпадают");
+            Assert.AreEqual(2,_contact.Contacts.Count,"Кол-во контактов не совпадают");
             Assert.AreEqual(_contact.Contacts[0].Name, _firstContact.Name, "Метод десеариализует не правильную информацию(имя первого контакта)");
             Assert.AreEqual(_contact.Contacts[1].Surname, _secondContact.Surname, "Метод десериалузиет не правильную информацию(фамилия второго контакта)");
             Assert.AreEqual(_contact.Contacts[0].Num.Number, _firstContact.Num.Number, "Метод десериалузиет не правильную информацию(номер телефона первого контакта)");

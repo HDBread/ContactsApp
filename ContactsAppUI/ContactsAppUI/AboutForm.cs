@@ -16,5 +16,13 @@ namespace ContactsApp
         {
             InitializeComponent();
         }
+
+        private void GitLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //Линк остается видимым
+            this.GitLink.LinkVisited = true;
+            //Навигация по URL
+            System.Diagnostics.Process.Start("http://github.com/hdbread/ContactsApp");
+        }
     }
 }

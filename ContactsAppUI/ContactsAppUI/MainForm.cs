@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using ContactsApp;
 
-namespace ContactsAppUI
+namespace ContactsApp
 {
     public partial class MainForm : Form
     {
-        private bool _isProjectChanged = false;
-
         /// <summary>
         /// Объявление нового экземпляра списка контактов
         /// </summary>
         private Project _project = new Project();
+
+        /// <summary>
+        /// Экземпляр списка контактов после поиска
+        /// </summary>
+        private readonly Project _projectForFind = new Project();
         
 
         /// <summary>
@@ -30,7 +32,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Форма для показа окна About
             Form About = new AboutForm();
@@ -42,27 +44,9 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult;
-            if(_isProjectChanged != true | ContactsList.Items.Count == 0)
-                this.Close();
-            else
-            {
-                dialogResult = MessageBox.Show("Имеются не сохраненные данные. Желаете сохранить их перед выходом?",
-                    "Save befor exit",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-
-                if (dialogResult == DialogResult.Yes)
-                {
-                    SaveFileAs();
-                }
-                else
-                {
-                    this.Close();
-                }
-            }
+            this.Close();
         }
 
         /// <summary>
@@ -70,14 +54,13 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void createContactToolStripMenuItem_Click(object sender, EventArgs e)
+        private void CreateContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
             AddEditContactForm addContact = new AddEditContactForm();
             if (addContact.ShowDialog() == DialogResult.OK)
             {
                 _project.Contacts.Add(addContact.ContactData);
-                _isProjectChanged = true;
                 SaveFile();
             }
             FillListView(_project.Contacts);
@@ -87,11 +70,14 @@ namespace ContactsAppUI
         /// Заполнить список контактов. Если в списке уже есть данные (список ранее был заполнен),
         /// то список будет очищен и снова заполнен.
         /// </summary>
-        /// <param name="_contact">Список контактов</param>
-        public void FillListView(List<Contact> _contact)
+        /// <param name="contacts">Список контактов</param>
+        public void FillListView(List<Contact> contacts)
         {
             if (ContactsList.Items.Count > 0) ContactsList.Items.Clear();
-            foreach (Contact contact in _contact)
+
+            contacts = _project.SortContacts(contacts);
+
+            foreach (Contact contact in contacts)
             {
                 AddNewClient(contact);
             }
@@ -103,7 +89,8 @@ namespace ContactsAppUI
         /// <param name="contact">Контакт</param>
         public void AddNewClient(Contact contact)
         {
-            int index = ContactsList.Items.Add(contact.Surname).Index;
+            string contactSurnameAndName = contact.Surname + " " + contact.Name;
+            int index = ContactsList.Items.Add(contactSurnameAndName).Index;
             ContactsList.Items[index].Tag = contact; //свойство Tag теперь ссылается на клиента, пригодится при удалении из списка и редактировании
         }
 
@@ -114,14 +101,16 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void ContactsList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            var project = (FindTextbox.Text == string.Empty) ? _project : _projectForFind;
+
             if (ContactsList.SelectedIndices.Count != 0)
             {
-                SurnameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Surname;
-                NameTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Name;
-                BirthdayDayTool.Value = _project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirthday;
-                PhoneTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Num.Number.ToString();
-                EmailTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Email;
-                VkTextbox.Text = _project.Contacts[ContactsList.SelectedIndices[0]].Vk;
+                SurnameTextbox.Text = project.Contacts[ContactsList.SelectedIndices[0]].Surname;
+                NameTextbox.Text = project.Contacts[ContactsList.SelectedIndices[0]].Name;
+                BirthdayDayTool.Value = project.Contacts[ContactsList.SelectedIndices[0]].DateOfBirthday;
+                PhoneTextbox.Text = project.Contacts[ContactsList.SelectedIndices[0]].Num.Number.ToString();
+                EmailTextbox.Text = project.Contacts[ContactsList.SelectedIndices[0]].Email;
+                VkTextbox.Text = project.Contacts[ContactsList.SelectedIndices[0]].Vk;
             }
             else
             {
@@ -141,14 +130,15 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
-          DialogResult _dialogResult = MessageBox.Show("Are you sure you want to delete the contact?", "Remove Contact",
+            var project = (FindTextbox.Text == string.Empty) ? _project : _projectForFind;
+
+            DialogResult _dialogResult = MessageBox.Show("Are you sure you want to delete the contact?", "Remove Contact",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (_dialogResult == DialogResult.Yes)
             {
                 int index = ContactsList.SelectedIndices[0];
-                _project.Contacts.RemoveAt(index);
+                project.Contacts.RemoveAt(index);
                 ContactsList.Items[index].Remove();
-                _isProjectChanged = true;
                 SaveFile();
             }
         }
@@ -160,18 +150,20 @@ namespace ContactsAppUI
         /// <param name="e"></param>
         private void EditButton_Click(object sender, EventArgs e)
         {
+            var project = (FindTextbox.Text == string.Empty) ? _project : _projectForFind;
+
             int index = ContactsList.SelectedIndices[0];
             AddEditContactForm editContact = new AddEditContactForm();
-            editContact.ContactView(_project.Contacts[index]);
+            editContact.ContactView(project.Contacts[index]);
             if (editContact.ShowDialog() == DialogResult.OK)
             {
-                _project.Contacts.RemoveAt(index);
+                project.Contacts.RemoveAt(index);
                 ContactsList.Items[index].Remove();
-                _project.Contacts.Insert(index,editContact.ContactData);
-                _isProjectChanged = true;
+                project.Contacts.Insert(index,editContact.ContactData);
+                FillListView(project.Contacts);
                 SaveFile();
             }
-            FillListView(_project.Contacts);
+            
         }
 
         /// <summary>
@@ -179,7 +171,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void saveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFile();
         }
@@ -189,7 +181,7 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileAs();
         }
@@ -199,25 +191,13 @@ namespace ContactsAppUI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_isProjectChanged == true)
-            {
-                MessageBox.Show("Есть несохраненные данные. Желаете сохранить их перед открытием новых?",
-                    "Save before open",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (DialogResult == DialogResult.Yes)
-                {
-                    SaveFile();
-                }
-            }
-
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.ShowDialog();
             string fileName = openFile.FileName;
             _project = ProjectManager.LoadFile(_project, fileName);
             FillListView(_project.Contacts);
-            _isProjectChanged = false;
 
         }
 
@@ -231,7 +211,6 @@ namespace ContactsAppUI
             saveFileAs.ShowDialog();
             string fileName = saveFileAs.FileName;
             ProjectManager.SaveFile(_project, fileName);
-            _isProjectChanged = false;
         }
 
         /// <summary>
@@ -240,7 +219,13 @@ namespace ContactsAppUI
         private void SaveFile()
         {
             ProjectManager.SaveFile(_project, String.Empty);
-            _isProjectChanged = false;
+        }
+
+        private void FindTextbox_TextChanged(object sender, EventArgs e)
+        { 
+            _projectForFind.Contacts = _projectForFind.SortContacts(_project.Contacts, FindTextbox.Text);
+
+            FillListView(_projectForFind.Contacts);
         }
 
     }

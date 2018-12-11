@@ -1,7 +1,6 @@
 ﻿using System;
-using NUnit.Framework;
 using ContactsApp;
-using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
+using NUnit.Framework;
 
 namespace ContactsAppUnitTest
 {
@@ -122,7 +121,7 @@ namespace ContactsAppUnitTest
             TestName = "Присвоение пустой строки в качестве фамилии")]
         public void TestSurnameSet_ArgumentException(string wrongSurname, Type expectedException, string message)
         {
-            NUnit.Framework.Assert.Throws(expectedException, () => { _contact.Surname = wrongSurname; }, message);
+            Assert.Throws(expectedException, () => { _contact.Surname = wrongSurname; }, message);
         }
 
         /// <summary>
