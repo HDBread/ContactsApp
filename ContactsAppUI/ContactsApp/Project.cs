@@ -12,10 +12,15 @@ namespace ContactsApp
     public class Project
     {
         /// <summary>
-        /// Задается список всех контактов
+        /// Задается список контактов
         /// </summary>
         public List<Contact> Contacts = new List<Contact>();
 
+        /// <summary>
+        /// Метод сортировки списка контактов в алфовитном порядке
+        /// </summary>
+        /// <param name="contactsList">Список контактов</param>
+        /// <returns>Отсортированный список контактов</returns>
         public List<Contact> SortContacts(List<Contact> contactsList)
         {
             //Сортировка списка контактов
@@ -30,17 +35,25 @@ namespace ContactsApp
             return contactsList;
         }
 
-        public List<Contact> SortContacts(List<Contact> contactsList, string findSubstring)
+        /// <summary>
+        /// Метод поиска списка контактов по фамилии, имени и номеру телефона
+        /// </summary>
+        /// <param name="contactsList">Список контактов</param>
+        /// <param name="substring">ПодсрокаБ по которой осуществляется поиск</param>
+        /// <returns>Найденный список контактов</returns>
+        public List<Contact> SortContacts(List<Contact> contactsList, string substring)
         {
-            List<Contact> findContacts = new List<Contact>();
+            List<Contact> findedContacts = new List<Contact>();
             foreach (var contact in contactsList)
             {
-                if (contact.Surname.StartsWith(findSubstring))
+                if (contact.Surname.StartsWith(substring) ||
+                    contact.Name.StartsWith(substring) || 
+                    contact.Num.Number.ToString().StartsWith(substring))
                 {
-                    findContacts.Add(contact);
+                    findedContacts.Add(contact);
                 }
             }
-            return findContacts;
+            return findedContacts;
         }
     }
 }
