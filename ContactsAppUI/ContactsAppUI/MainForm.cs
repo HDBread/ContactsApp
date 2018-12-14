@@ -26,6 +26,7 @@ namespace ContactsApp
             InitializeComponent();
             _project = ProjectManager.LoadFile(_project, String.Empty);
             FillListView(_project.Contacts);
+            CheckTodayBirthday();
         }
 
         /// <summary>
@@ -63,6 +64,7 @@ namespace ContactsApp
             {
                 _project.Contacts.Add(addContact.ContactData);
                 SaveFile();
+                CheckTodayBirthday();
             }
             FillListView(_project.Contacts);
         }
@@ -145,6 +147,7 @@ namespace ContactsApp
                     ContactsList.Items[index].Remove();
                     FindTextbox.Text = string.Empty;
                     SaveFile();
+                    CheckTodayBirthday();
                 }
             }
         }
@@ -171,6 +174,7 @@ namespace ContactsApp
                     FillListView(_project.Contacts);
                     FindTextbox.Text = String.Empty;
                     SaveFile();
+                    CheckTodayBirthday();
                 }
             }
 
@@ -269,6 +273,24 @@ namespace ContactsApp
             }
 
             return -1;
+        }
+
+        /// <summary>
+        /// Метод вывода контаков, у которых сегодня день рожденья
+        /// </summary>
+        private void CheckTodayBirthday()
+        {
+            BirthdayPanel.Visible = false;
+            BirthdayShowLabel.Text = String.Empty;
+            List<Contact> birthdayList = _project.ShowBirthdayList(DateTime.Today);
+            if (birthdayList.Count != 0)
+            {
+                BirthdayPanel.Visible = true;
+                foreach (var contact in birthdayList)
+                {
+                    BirthdayShowLabel.Text += contact.Surname + " " + contact.Name + "; ";
+                }
+            }
         }
     }
 }

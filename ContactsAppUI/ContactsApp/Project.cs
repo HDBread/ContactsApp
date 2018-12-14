@@ -55,5 +55,19 @@ namespace ContactsApp
             }
             return findedContacts;
         }
+
+        public List<Contact> ShowBirthdayList(DateTime date)
+        {
+            List<Contact> birthdayContacts = new List<Contact>();
+            foreach (var contact in Contacts)
+            {
+                if (contact.DateOfBirthday.Day == date.Day && contact.DateOfBirthday.Month == date.Month)
+                {
+                    birthdayContacts.Add(contact);
+                }
+            }
+
+            return birthdayContacts;
+        }
     }
 }

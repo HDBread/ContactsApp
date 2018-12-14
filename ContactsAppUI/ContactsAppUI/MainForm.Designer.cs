@@ -50,6 +50,8 @@
             this.FindTextbox = new System.Windows.Forms.TextBox();
             this.FindLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
+            this.BirthdayPanel = new System.Windows.Forms.Panel();
+            this.BirthdayShowLabel = new System.Windows.Forms.Label();
             this.BirthdayDayTool = new System.Windows.Forms.DateTimePicker();
             this.VkTextbox = new System.Windows.Forms.TextBox();
             this.EmailTextbox = new System.Windows.Forms.TextBox();
@@ -64,11 +66,13 @@
             this.SubnameLabebl = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.BirthdayText = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.BirthdayPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -202,6 +206,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.splitContainer1.Panel2.Controls.Add(this.BirthdayPanel);
             this.splitContainer1.Panel2.Controls.Add(this.BirthdayDayTool);
             this.splitContainer1.Panel2.Controls.Add(this.VkTextbox);
             this.splitContainer1.Panel2.Controls.Add(this.EmailTextbox);
@@ -298,13 +303,31 @@
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.CreateContactToolStripMenuItem_Click);
             // 
+            // BirthdayPanel
+            // 
+            this.BirthdayPanel.Controls.Add(this.BirthdayText);
+            this.BirthdayPanel.Controls.Add(this.BirthdayShowLabel);
+            this.BirthdayPanel.Location = new System.Drawing.Point(3, 400);
+            this.BirthdayPanel.Name = "BirthdayPanel";
+            this.BirthdayPanel.Size = new System.Drawing.Size(564, 131);
+            this.BirthdayPanel.TabIndex = 15;
+            this.BirthdayPanel.Visible = false;
+            // 
+            // BirthdayShowLabel
+            // 
+            this.BirthdayShowLabel.AutoSize = true;
+            this.BirthdayShowLabel.Location = new System.Drawing.Point(12, 38);
+            this.BirthdayShowLabel.Name = "BirthdayShowLabel";
+            this.BirthdayShowLabel.Size = new System.Drawing.Size(0, 16);
+            this.BirthdayShowLabel.TabIndex = 0;
+            // 
             // BirthdayDayTool
             // 
             this.BirthdayDayTool.Enabled = false;
             this.BirthdayDayTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthdayDayTool.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthdayDayTool.Location = new System.Drawing.Point(84, 60);
-            this.BirthdayDayTool.MaxDate = new System.DateTime(2018, 9, 6, 0, 0, 0, 0);
+            this.BirthdayDayTool.MaxDate = new System.DateTime(2020, 8, 22, 0, 0, 0, 0);
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
             this.BirthdayDayTool.Size = new System.Drawing.Size(115, 22);
@@ -430,6 +453,15 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // BirthdayText
+            // 
+            this.BirthdayText.AutoSize = true;
+            this.BirthdayText.Location = new System.Drawing.Point(12, 11);
+            this.BirthdayText.Name = "BirthdayText";
+            this.BirthdayText.Size = new System.Drawing.Size(173, 16);
+            this.BirthdayText.TabIndex = 1;
+            this.BirthdayText.Text = "Сегодняшние именинеки:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,6 +482,8 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.BirthdayPanel.ResumeLayout(false);
+            this.BirthdayPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -492,6 +526,9 @@
         private System.Windows.Forms.ToolStripMenuItem safeAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.Panel BirthdayPanel;
+        private System.Windows.Forms.Label BirthdayShowLabel;
+        private System.Windows.Forms.Label BirthdayText;
     }
 }
 
