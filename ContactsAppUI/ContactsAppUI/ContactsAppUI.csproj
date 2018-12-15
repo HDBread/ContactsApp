@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ИконкаMainForm.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -134,6 +137,10 @@
   <ItemGroup>
     <None Include="Resources\edit.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ИконкаMainForm.ico" />
+    <Content Include="ИконкаMainForm.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
@@ -142,4 +149,12 @@
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.11.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.11.0\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
   </Target>
+  <PropertyGroup>
+    <PostBuildEvent>md $(SolutionDir)InstallScripts\Release
+md $(SolutionDir)InstallScripts\Installers
+xcopy $(ProjectDir)$(OutDir)*.dll $(SolutionDir)InstallScripts\Release
+xcopy $(ProjectDir)$(OutDir)*.exe $(SolutionDir)InstallScripts\Release
+"C:\Program Files (x86)\Inno Setup 5\ISCC.exe" $(SolutionDir)InstallScripts\ContactsAppInstall.iss
+del "C:\Users\User\Documents\Contacts.txt"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

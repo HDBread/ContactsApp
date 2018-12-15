@@ -51,6 +51,7 @@
             this.FindLabel = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.BirthdayPanel = new System.Windows.Forms.Panel();
+            this.BirthdayText = new System.Windows.Forms.Label();
             this.BirthdayShowLabel = new System.Windows.Forms.Label();
             this.BirthdayDayTool = new System.Windows.Forms.DateTimePicker();
             this.VkTextbox = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.SubnameLabebl = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.BirthdayText = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -305,6 +305,8 @@
             // 
             // BirthdayPanel
             // 
+            this.BirthdayPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BirthdayPanel.Controls.Add(this.BirthdayText);
             this.BirthdayPanel.Controls.Add(this.BirthdayShowLabel);
             this.BirthdayPanel.Location = new System.Drawing.Point(3, 400);
@@ -312,6 +314,15 @@
             this.BirthdayPanel.Size = new System.Drawing.Size(564, 131);
             this.BirthdayPanel.TabIndex = 15;
             this.BirthdayPanel.Visible = false;
+            // 
+            // BirthdayText
+            // 
+            this.BirthdayText.AutoSize = true;
+            this.BirthdayText.Location = new System.Drawing.Point(12, 11);
+            this.BirthdayText.Name = "BirthdayText";
+            this.BirthdayText.Size = new System.Drawing.Size(173, 16);
+            this.BirthdayText.TabIndex = 1;
+            this.BirthdayText.Text = "Сегодняшние именинеки:";
             // 
             // BirthdayShowLabel
             // 
@@ -327,7 +338,7 @@
             this.BirthdayDayTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.BirthdayDayTool.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthdayDayTool.Location = new System.Drawing.Point(84, 60);
-            this.BirthdayDayTool.MaxDate = new System.DateTime(2020, 8, 22, 0, 0, 0, 0);
+            this.BirthdayDayTool.MaxDate = new System.DateTime(4910, 12, 27, 0, 0, 0, 0);
             this.BirthdayDayTool.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.BirthdayDayTool.Name = "BirthdayDayTool";
             this.BirthdayDayTool.Size = new System.Drawing.Size(115, 22);
@@ -338,10 +349,10 @@
             // 
             this.VkTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.VkTextbox.Enabled = false;
             this.VkTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.VkTextbox.Location = new System.Drawing.Point(84, 144);
             this.VkTextbox.Name = "VkTextbox";
+            this.VkTextbox.ReadOnly = true;
             this.VkTextbox.Size = new System.Drawing.Size(473, 22);
             this.VkTextbox.TabIndex = 9;
             // 
@@ -349,10 +360,10 @@
             // 
             this.EmailTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.EmailTextbox.Enabled = false;
             this.EmailTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailTextbox.Location = new System.Drawing.Point(84, 116);
             this.EmailTextbox.Name = "EmailTextbox";
+            this.EmailTextbox.ReadOnly = true;
             this.EmailTextbox.Size = new System.Drawing.Size(473, 22);
             this.EmailTextbox.TabIndex = 10;
             // 
@@ -360,10 +371,10 @@
             // 
             this.PhoneTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PhoneTextbox.Enabled = false;
             this.PhoneTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PhoneTextbox.Location = new System.Drawing.Point(84, 88);
             this.PhoneTextbox.Name = "PhoneTextbox";
+            this.PhoneTextbox.ReadOnly = true;
             this.PhoneTextbox.Size = new System.Drawing.Size(473, 22);
             this.PhoneTextbox.TabIndex = 11;
             // 
@@ -371,10 +382,10 @@
             // 
             this.NameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NameTextbox.Enabled = false;
             this.NameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.NameTextbox.Location = new System.Drawing.Point(84, 32);
             this.NameTextbox.Name = "NameTextbox";
+            this.NameTextbox.ReadOnly = true;
             this.NameTextbox.Size = new System.Drawing.Size(473, 22);
             this.NameTextbox.TabIndex = 12;
             // 
@@ -382,10 +393,10 @@
             // 
             this.SurnameTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.SurnameTextbox.Enabled = false;
             this.SurnameTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.SurnameTextbox.Location = new System.Drawing.Point(84, 4);
             this.SurnameTextbox.Name = "SurnameTextbox";
+            this.SurnameTextbox.ReadOnly = true;
             this.SurnameTextbox.Size = new System.Drawing.Size(473, 22);
             this.SurnameTextbox.TabIndex = 13;
             // 
@@ -452,15 +463,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // BirthdayText
-            // 
-            this.BirthdayText.AutoSize = true;
-            this.BirthdayText.Location = new System.Drawing.Point(12, 11);
-            this.BirthdayText.Name = "BirthdayText";
-            this.BirthdayText.Size = new System.Drawing.Size(173, 16);
-            this.BirthdayText.TabIndex = 1;
-            this.BirthdayText.Text = "Сегодняшние именинеки:";
             // 
             // MainForm
             // 

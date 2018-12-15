@@ -140,9 +140,9 @@ namespace ContactsApp
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (_dialogResult == DialogResult.Yes)
                 {
-                    FillListView(_project.Contacts);
-                    int index = (FindTextbox.Text == string.Empty) ? ContactsList.SelectedIndices[0]
+                    int index = (FindTextbox.Text == string.Empty)? ContactsList.SelectedIndices[0]
                         : GetContactIndex(_project.Contacts, _projectForFind.Contacts);
+                    FillListView(_project.Contacts);
                     _project.Contacts.RemoveAt(index);
                     ContactsList.Items[index].Remove();
                     FindTextbox.Text = string.Empty;
@@ -242,9 +242,9 @@ namespace ContactsApp
         /// <param name="e"></param>
         private void FindTextbox_TextChanged(object sender, EventArgs e)
         {
+            //Задать первы символ в верхний регистр
             if (((TextBox)sender).Text.Length == 1)
                 ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
-
             ((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
 
             _projectForFind.Contacts = _projectForFind.SortContacts(_project.Contacts, FindTextbox.Text);

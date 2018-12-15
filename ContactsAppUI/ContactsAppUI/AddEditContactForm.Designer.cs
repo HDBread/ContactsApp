@@ -44,7 +44,8 @@
             this.BirthdayDayTool = new System.Windows.Forms.DateTimePicker();
             this.CancelButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
-            this.errorToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // SubnameLabebl
@@ -132,13 +133,10 @@
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // errorToolTip
+            // errorProvider
             // 
-            this.errorToolTip.AutomaticDelay = 800;
-            this.errorToolTip.IsBalloon = true;
-            this.errorToolTip.OwnerDraw = true;
-            this.errorToolTip.ShowAlways = true;
-            this.errorToolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Error;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // AddEditContactForm
             // 
@@ -162,6 +160,7 @@
             this.Name = "AddEditContactForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,6 +182,6 @@
         private System.Windows.Forms.DateTimePicker BirthdayDayTool;
         private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.Button OKButton;
-        private System.Windows.Forms.ToolTip errorToolTip;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

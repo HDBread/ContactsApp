@@ -4,35 +4,39 @@ namespace ContactsApp
 {
     public class Contact : ICloneable
     {
+        #region Инициализация полей
+
         /// <summary>
-        /// Объект(?) свойста фамилия
+        /// Поле свойста фамилия
         /// </summary>
         private string _surname;
 
         /// <summary>
-        /// Объект(?) свойста имя
+        /// Поле свойста имя
         /// </summary>
         private string _name;
 
         /// <summary>
-        /// Объект(?) свойста дата рождения
+        /// Поле свойста дата рождения
         /// </summary>
         private DateTime _date;
 
         /// <summary>
-        /// Объект(?) свойства номер телефона
+        /// Поле свойства номер телефона
         /// </summary>
         private PhoneNumber _phone = new PhoneNumber();
 
         /// <summary>
-        /// Объект(?) свойста почтовый ящик
+        /// Поле свойста почтовый ящик
         /// </summary>
         private string _email;
 
         /// <summary>
-        /// Объект(?) свойста id вконтакте
+        /// Поле свойста id вконтакте
         /// </summary>
         private string _vk;
+
+        #endregion
 
 
         /// <summary>

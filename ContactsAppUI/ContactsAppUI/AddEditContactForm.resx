@@ -262,7 +262,7 @@
     <value>110, 33</value>
   </data>
   <data name="SurnameTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="SurnameTextbox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -289,7 +289,7 @@
     <value>110, 61</value>
   </data>
   <data name="NameTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="NameTextbox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -316,7 +316,7 @@
     <value>110, 117</value>
   </data>
   <data name="PhoneTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="PhoneTextbox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -346,7 +346,7 @@
     <value>110, 145</value>
   </data>
   <data name="EmailTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="EmailTextbox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -373,7 +373,7 @@
     <value>110, 173</value>
   </data>
   <data name="VkTextbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="VkTextbox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -463,7 +463,7 @@
     <value>110, 89</value>
   </data>
   <data name="BirthdayDayTool.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 22</value>
+    <value>449, 22</value>
   </data>
   <data name="BirthdayDayTool.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -540,8 +540,8 @@
   <data name="&gt;&gt;OKButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="errorToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 26</value>
+  <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 19</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -561,11 +561,11 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Add/Edit Contact</value>
   </data>
-  <data name="&gt;&gt;errorToolTip.Name" xml:space="preserve">
-    <value>errorToolTip</value>
+  <data name="&gt;&gt;errorProvider.Name" xml:space="preserve">
+    <value>errorProvider</value>
   </data>
-  <data name="&gt;&gt;errorToolTip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;errorProvider.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ErrorProvider, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AddEditContactForm</value>

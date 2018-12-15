@@ -16,6 +16,8 @@ namespace ContactsApp
 
         public Contact ContactData => _contact;
 
+        #region Флаги правильности ввода параметров
+
         /// <summary>
         /// Флаг верности ввода фамилии
         /// </summary>
@@ -45,6 +47,8 @@ namespace ContactsApp
         /// Флаг верности ввода Id Вконтакте
         /// </summary>
         private bool _checkVkResult = false;
+
+        #endregion
 
         /// <summary>
         /// Кнопка Cancel. Закрывает форму.
@@ -100,18 +104,18 @@ namespace ContactsApp
         /// <param name="e"></param>
         private void SurnameTextbox_TextChanged(object sender, EventArgs ex)
         {
-            string text = SurnameTextbox.Text;
+            UpperFirstSimbol(sender);
             try
             {
-                _contact.Surname = text;
+                _contact.Surname = SurnameTextbox.Text;
                 SurnameTextbox.BackColor = Color.White;
+                errorProvider.SetError(SurnameTextbox, String.Empty);
                 _checkSurnameResult = true;
 
             }
             catch (ArgumentNullException e)
             {
-                errorToolTip.ToolTipTitle = "Surname Null Error";
-                errorToolTip.SetToolTip(SurnameTextbox, e.Message);
+                errorProvider.SetError(SurnameTextbox, e.Message);
                 SurnameTextbox.Focus();
                 SurnameTextbox.BackColor = Color.LightSalmon;
                 _checkSurnameResult = false;
@@ -119,8 +123,7 @@ namespace ContactsApp
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Surname Length Error";
-                errorToolTip.SetToolTip(SurnameTextbox, e.Message);
+                errorProvider.SetError(SurnameTextbox, e.Message);
                 SurnameTextbox.Focus();
                 SurnameTextbox.BackColor = Color.LightSalmon;
                 _checkSurnameResult = false;
@@ -136,25 +139,25 @@ namespace ContactsApp
         /// <param name="e"></param>
         private void NameTextbox_TextChanged(object sender, EventArgs ex)
         {
+            UpperFirstSimbol(sender);
             try
             {
                 _contact.Name = NameTextbox.Text;
                 NameTextbox.BackColor = Color.White;
+                errorProvider.SetError(NameTextbox, String.Empty);
                 _checkNameResult = true;
 
             }
             catch (ArgumentNullException e)
             {
-                errorToolTip.ToolTipTitle = "Name Null Error";
-                errorToolTip.SetToolTip(NameTextbox, e.Message);
+                errorProvider.SetError(NameTextbox, e.Message);
                 NameTextbox.Focus();
                 NameTextbox.BackColor = Color.LightSalmon;
                 _checkNameResult = false;
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Name Length Error";
-                errorToolTip.SetToolTip(NameTextbox, e.Message);
+                errorProvider.SetError(NameTextbox, e.Message);
                 NameTextbox.Focus();
                 NameTextbox.BackColor = Color.LightSalmon;
                 _checkNameResult = false;
@@ -168,34 +171,33 @@ namespace ContactsApp
         /// <param name="ex"></param>
         private void PhoneTextbox_TextChanged(object sender, EventArgs ex)
         {
+            UpperFirstSimbol(sender);
             try
             {
                 _contact.Num = new PhoneNumber();
                 _contact.Num.Number = Convert.ToInt64(PhoneTextbox.Text);
                 PhoneTextbox.BackColor = Color.White;
+                errorProvider.SetError(PhoneTextbox, String.Empty);
                 _checkPhoneResult = true;
 
             }
             catch (ArgumentNullException e)
             {
-                errorToolTip.ToolTipTitle = "Phone null error";
-                errorToolTip.SetToolTip(PhoneTextbox, e.Message);
+                errorProvider.SetError(PhoneTextbox, e.Message);
                 PhoneTextbox.Focus();
                 PhoneTextbox.BackColor = Color.LightSalmon;
                 _checkPhoneResult = false;
             }
             catch (FormatException e)
             {
-                errorToolTip.ToolTipTitle = "Phone first number error";
-                errorToolTip.SetToolTip(PhoneTextbox, e.Message);
+                errorProvider.SetError(PhoneTextbox, e.Message);
                 PhoneTextbox.Focus();
                 PhoneTextbox.BackColor = Color.LightSalmon;
                 _checkPhoneResult = false;
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Phone length error";
-                errorToolTip.SetToolTip(PhoneTextbox, e.Message);
+                errorProvider.SetError(PhoneTextbox, e.Message);
                 PhoneTextbox.Focus();
                 PhoneTextbox.BackColor = Color.LightSalmon;
                 _checkPhoneResult = false;
@@ -209,25 +211,25 @@ namespace ContactsApp
         /// <param name="ex"></param>
         private void EmailTextbox_TextChanged(object sender, EventArgs ex)
         {
+            UpperFirstSimbol(sender);
             try
             {
                 _contact.Email = EmailTextbox.Text;
                 EmailTextbox.BackColor = Color.White;
+                errorProvider.SetError(EmailTextbox,String.Empty);
                 _checkEmailResult = true;
 
             }
             catch (ArgumentNullException e)
             {
-                errorToolTip.ToolTipTitle = "Email Null Error";
-                errorToolTip.SetToolTip(EmailTextbox, e.Message);
+                errorProvider.SetError(EmailTextbox, e.Message);
                 EmailTextbox.Focus();
                 EmailTextbox.BackColor = Color.LightSalmon;
                 _checkEmailResult = false;
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Email Length Error";
-                errorToolTip.SetToolTip(EmailTextbox, e.Message);
+                errorProvider.SetError(EmailTextbox, e.Message);
                 EmailTextbox.Focus();
                 EmailTextbox.BackColor = Color.LightSalmon;
                 _checkEmailResult = false;
@@ -241,24 +243,24 @@ namespace ContactsApp
         /// <param name="ex"></param>
         private void VkTextbox_TextChanged(object sender, EventArgs ex)
         {
+            UpperFirstSimbol(sender);
             try
             {
                 _contact.Vk = VkTextbox.Text;
                 VkTextbox.BackColor = Color.White;
+                errorProvider.SetError(VkTextbox,String.Empty);
                 _checkVkResult = true;
             }
             catch (ArgumentNullException e)
             {
-                errorToolTip.ToolTipTitle = "Vk Null Error";
-                errorToolTip.SetToolTip(VkTextbox, e.Message);
+                errorProvider.SetError(VkTextbox,e.Message);
                 VkTextbox.Focus();
                 VkTextbox.BackColor = Color.LightSalmon;
                 _checkVkResult = false;
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Vk Length Error";
-                errorToolTip.SetToolTip(VkTextbox, e.Message);
+                errorProvider.SetError(VkTextbox,e.Message);
                 VkTextbox.Focus();
                 VkTextbox.BackColor = Color.LightSalmon;
                 _checkVkResult = false;
@@ -276,12 +278,12 @@ namespace ContactsApp
             {
                 _contact.DateOfBirthday = BirthdayDayTool.Value;
                 BirthdayDayTool.BackColor = Color.White;
+                errorProvider.SetError(BirthdayDayTool,String.Empty);
                 _checkDataResult = true;
             }
             catch (ArgumentException e)
             {
-                errorToolTip.ToolTipTitle = "Birthday value Error";
-                errorToolTip.SetToolTip(BirthdayDayTool, e.Message);
+                errorProvider.SetError(BirthdayDayTool,e.Message);
                 BirthdayDayTool.BackColor = Color.LightSalmon;
                 BirthdayDayTool.Focus();
                 _checkDataResult = false;
@@ -300,6 +302,17 @@ namespace ContactsApp
             PhoneTextbox.Text = Convert.ToString(contact.Num.Number);
             EmailTextbox.Text = contact.Email;
             VkTextbox.Text = contact.Vk;
+        }
+
+        /// <summary>
+        /// Метод задания первого символа в верхний регистр
+        /// </summary>
+        /// <param name="sender"></param>
+        private void UpperFirstSimbol(object sender)
+        {
+            if (((TextBox)sender).Text.Length == 1)
+                ((TextBox)sender).Text = ((TextBox)sender).Text.ToUpper();
+            ((TextBox)sender).Select(((TextBox)sender).Text.Length, 0);
         }
 
     }
